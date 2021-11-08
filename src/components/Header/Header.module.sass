@@ -1,0 +1,38 @@
+
+.header
+  width: 100%
+  height: 100%
+  border-radius: inherit
+  background-color: #000000
+  display: grid
+  grid-template-columns: 1fr 18fr
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 0.3rem
+    background: #2CD94D
+    background: radial-gradient(ellipse at center, #00aeff, rgb(21, 255, 0))
+
+  div:nth-child(1)
+    display: flex
+    justify-content: center
+    font-family: Roboto
+    font-style: normal
+    font-weight: normal
+    font-size: calc(2rem + 1vw)
+    align-items: center
+    text-align: center
+    color: #0FB7C1
+    text-shadow: 1px 2px 2px #5BF5FF
+
+  div:nth-child(2)
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding-right: 2%
+    img
+      width: 5rem
