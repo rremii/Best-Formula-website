@@ -1,3 +1,5 @@
+@import "./src/sass/variables"
+
 .NavBar
   width: 100%
   height: 100%
@@ -6,19 +8,175 @@
   align-items: center
   justify-content: flex-start
   border-radius: inherit
+  position: relative
+  overflow: hidden
+  z-index: 5
+  transition: 1.5s
   background-color: rgba(0, 0, 0, 0.66)
-
+  //background-color: transparent
+  @include media-break(768px, max)
+    background-color: transparent
   div:nth-child(1)
-    width: 100%
-    height: 10%
+    z-index: 10
+    width: calc(2vw + 5rem)
+    height: calc(2vw + 5rem)
     display: flex
     flex-direction: column
     align-items: center
     justify-content: space-evenly
     padding: 0.5rem 0
+
+    @include media-break(768px, max)
+      background-color: rgba(0, 0, 0, 0.66)
+      border-radius: 50%
+      position: absolute
+      top: 1%
+      left: 3%
+      visibility: visible
+      padding: 0.7rem 0
+
     span
       width: 70%
       height: 10%
       background: linear-gradient(269.32deg, #FF36C7 1.45%, #2A7DDE 94.95%, #A355D1 94.95%)
-      border: 1px solid #04F0FF
+      //border: 1px solid #04F0FF
       border-radius: 10px
+      @include media-break(768px, max)
+        width: 55%
+        height: 7%
+
+.NavBar::after
+  content: '123'
+  position: absolute
+  top: 1%
+  left: 3%
+  width: calc(2vw + 5rem)
+  height: calc(2vw + 5rem)
+  transform: scale(0.5)
+  opacity: 0
+  background-color: rgba(0, 0, 0, 0.66)
+  transition: 1.5s
+  border-radius: 20rem
+
+.active::after
+  @include media-break(768px, max)
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.66)
+    transform: scale(2)
+    opacity: 1
+
+
+.active
+  width: calc(17rem + 10vw)
+  height: $heigth-mian
+  visibility: visible
+  @include media-break(768px, max)
+    background-color: transparent
+
+  div:nth-child(1)
+    position: absolute
+    background-color: transparent
+    border-radius: 50%
+    top: 1%
+    left: calc(100% - (2vw + 5rem))
+    visibility: visible
+    padding: 0.7rem 0
+    animation-duration: 2s
+    animation-name: burgerActive
+
+    span:nth-child(1)
+      transform: rotateZ(45deg)
+      animation-name: crossLine1
+      animation-duration: 2s
+      //top: 50%
+      //position: absolute
+      animation-fill-mode: forwards
+
+    span:nth-child(2)
+      opacity: 0
+      animation-name: crossLine2
+      animation-duration: 2s
+      animation-fill-mode: forwards
+    span:nth-child(3)
+      //position: absolute
+      //top: 50%
+      transform: rotateZ(-45deg)
+      animation-name: crossLine3
+      animation-duration: 2s
+      animation-fill-mode: forwards
+
+
+  @keyframes burgerActive
+    0%
+      left: 3%
+
+    25%
+      opacity: 0.5
+      left: 3%
+
+
+    45%
+      opacity: 0
+      left: -9rem
+
+    50%
+      opacity: 0
+      left: calc(100% - (2vw + 5rem))
+
+    55%
+      opacity: 0
+    75%
+      opacity: 0.5
+
+    100%
+      opacity: 1
+
+  @keyframes crossLine1
+    0%
+      transform: rotateZ(0deg)
+
+    45%
+      transform: rotateZ(0deg)
+      position: static
+
+    60%
+      transform: rotateZ(45deg)
+      position: absolute
+      top: 50%
+
+    100%
+      position: absolute
+      top: 50%
+  @keyframes crossLine2
+    0%
+      opacity: 1
+
+    45%
+      opacity: 1
+
+    50%
+      opacity: 0
+    100%
+      opacity: 0
+  @keyframes crossLine3
+    0%
+      transform: rotateZ(0deg)
+
+
+    45%
+      transform: rotateZ(0deg)
+      position: static
+
+    60%
+      transform: rotateZ(-45deg)
+      position: absolute
+      top: 50%
+    100%
+      position: absolute
+      top: 50%
+
+
+
+
+
