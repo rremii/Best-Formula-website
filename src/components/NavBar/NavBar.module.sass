@@ -1,5 +1,73 @@
 @import "./src/sass/variables"
+.math_phisics
+  color: #ffffff
+  width: calc(2vw + 5rem)
+  height: calc(2vw + 5rem)
+  
+  font-size: calc(1.6rem + 0.3vw)
+  margin-bottom: 0.5rem
+  border-radius: 2rem
+  //border: rgba(255, 255, 255, 0.43) 0.1rem solid
+  background-color: rgba(0, 0, 0, 0.22)
+  @include media-break(768px, max)
+    display: none
 
+  a
+    font-weight: 500
+    transition: background-color 0.5s
+    color: inherit
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 2rem
+  .active__Links
+    background-color: white
+    border-radius: 2rem
+
+    color: black
+    
+
+.math_phisics_open:nth-child(3)
+  grid-row: 3 / 4
+
+.math_phisics_open:nth-child(2)
+  grid-row: 2 / 3
+
+.math_phisics_open
+
+  width: 90%
+  border-radius: 0 2rem
+  margin: 0 auto
+  height: 90%
+  a
+    text-align: center
+    border-radius: 0  2rem 0 2rem
+    border-left: 0.5rem solid rgb(255, 255, 255)
+    padding-left: 1rem
+    background-color: rgba(2, 2, 2, 0.52) 
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    letter-spacing: 1rem
+    font-size: calc(1.5rem + 0.7vw)
+    color: white
+    width: 100%
+    height: 100%
+    transition: background-color 0.5s
+
+
+  .active__Links_open
+    background-color: white
+    color: black
+    border-left: 0.5rem solid #36e124
+
+sup
+  font-size: 2rem
+  transform: translateY(-0.4rem)
+//////////////////////////////////////////////////////////////////////////////////////////////
 .NavBar
   width: 100%
   height: 100%
@@ -16,6 +84,7 @@
   //background-color: transparent
   @include media-break(768px, max)
     background-color: transparent
+
   div:nth-child(1)
     z-index: 10
     width: calc(2vw + 5rem)
@@ -57,8 +126,9 @@
   background-color: rgba(0, 0, 0, 0.66)
   transition: 1.5s
   border-radius: 20rem
+  z-index: -1
 
-.active::after
+.active__navBar::after
   @include media-break(768px, max)
     width: 100%
     height: 100%
@@ -67,10 +137,15 @@
     opacity: 1
 
 
-.active
+.active__navBar
   width: calc(17rem + 10vw)
   height: $heigth-mian
   visibility: visible
+  display: grid
+  grid-gap: 1rem
+  grid-template-rows: calc(2vw + 5rem) calc(2vw + 5rem) calc(2vw + 5rem)
+  grid-template-columns: 1fr
+
   @include media-break(768px, max)
     background-color: transparent
 
@@ -78,7 +153,7 @@
     position: absolute
     background-color: transparent
     border-radius: 50%
-    top: 1%
+    top: 0%
     left: calc(100% - (2vw + 5rem))
     visibility: visible
     padding: 0.7rem 0
@@ -98,6 +173,7 @@
       animation-name: crossLine2
       animation-duration: 2s
       animation-fill-mode: forwards
+
     span:nth-child(3)
       //position: absolute
       //top: 50%

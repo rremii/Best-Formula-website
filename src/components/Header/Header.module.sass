@@ -1,5 +1,6 @@
 
 .header
+  z-index: 15
   width: 100%
   height: 100%
   border-radius: inherit
@@ -38,3 +39,27 @@
     padding-right: 2%
     img
       width: calc(2rem + 0.8vw + 0.8vh)
+      cursor: pointer
+
+//////////
+.active_img
+  transform: rotateZ(120deg)
+  transition: 1.5s
+.notActive_img
+  transform: rotateZ(-120deg)
+  transition: 1s
+
+
+.pop_up
+  position: absolute
+  top: 100%
+  right: 0
+  width: calc(15rem + 10vw)
+  height: calc(25rem + 5vw)
+  background-color: rgba(0, 0, 0, 0.52)
+  transform: scaleY(0)
+  transform-origin: top
+  transition: 1s
+.active
+  transform: scaleY(1)
+
