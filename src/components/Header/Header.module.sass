@@ -8,6 +8,7 @@
   display: grid
   grid-template-columns: 1fr 18fr
   position: relative
+
   &::after
     content: ''
     position: absolute
@@ -18,7 +19,7 @@
     background: #2CD94D
     background: radial-gradient(ellipse at center, #00aeff, rgb(21, 255, 0))
 
-  div:nth-child(1)
+  .logo
     width: calc(7rem + 1.8vw)
     display: flex
     justify-content: center
@@ -31,12 +32,13 @@
     color: #0FB7C1
     text-shadow: 1px 2px 2px #5BF5FF
 
-  div:nth-child(2)
+  .gearWheel
     height: 100%
     display: flex
     align-items: center
     justify-content: flex-end
-    padding-right: 2%
+    padding-right: calc(2rem + 1vw)
+
     img
       width: calc(2rem + 0.8vw + 0.8vh)
       cursor: pointer
@@ -45,6 +47,7 @@
 .active_img
   transform: rotateZ(120deg)
   transition: 1.5s
+
 .notActive_img
   transform: rotateZ(-120deg)
   transition: 1s
@@ -55,11 +58,95 @@
   top: 100%
   right: 0
   width: calc(15rem + 10vw)
-  height: calc(25rem + 5vw)
+  height: calc(20rem + 5vw)
   background-color: rgba(0, 0, 0, 0.52)
   transform: scaleY(0)
   transform-origin: top
   transition: 1s
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+
+  &__lightLvl
+    width: 85%
+    height: 20%
+    color: white
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    div
+      cursor: pointer
+      position: relative
+      flex-grow: 1
+      margin: 0 1rem
+      height: 70%
+      border-radius: 2rem
+      border: white 0.2rem solid
+
+      span
+        transition: 0.5s
+        position: absolute
+        width: calc(1.8rem + 0.8vw)
+        top: 50%
+        left: 3%
+        transform: translateY(-50%)
+        border-radius: 50%
+        height: calc(1.8rem + 0.8vw)
+        background-color: white
+
+    img
+      cursor: pointer
+      width: 20%
+      height: 100%
+      object-fit: contain
+      background-color: transparent
+
+  &__lightLvl__active
+    div
+      span
+        left: calc(97% - (1.8rem + 0.8vw))
+
+  &__language
+    width: 85%
+    height: 20%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    span
+      cursor: pointer
+      width: 20%
+      font-size: calc(1rem + 0.9vw)
+      text-align: center
+
+    div
+      cursor: pointer
+      position: relative
+      flex-grow: 1
+      margin: 0 1rem
+      height: 70%
+      border-radius: 2rem
+      border: white 0.2rem solid
+
+      span
+        transition: 0.5s
+        position: absolute
+        width: calc(1.8rem + 0.8vw)
+        top: 50%
+        left: 3%
+        transform: translateY(-50%)
+        border-radius: 50%
+        height: calc(1.8rem + 0.8vw)
+        background-color: white
+
+  &__language__active
+    div
+      span
+        left: calc(97% - (1.8rem + 0.8vw))
+
+
 .active
   transform: scaleY(1)
 
