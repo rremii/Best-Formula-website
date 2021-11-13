@@ -11,6 +11,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import AboutPage from "./components/AboutPage/AboutPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -29,7 +31,8 @@ function App() {
 
         <main>
           <MainPage />
-          <div>qwqweqweeeeqqqqqqqqqqq</div>
+          <AboutPage />
+          <Footer/>
         </main>
       </div>
     </div>
