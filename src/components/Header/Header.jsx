@@ -1,6 +1,7 @@
 import css from './Header.module.sass'
 import gearWheel from './../../images/white-gear-icon-png-13.jpg'
 import {useEffect, useState} from "react";
+import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
 
@@ -28,7 +29,7 @@ const Header = (props) => {
     // useEffect(()=>console.log('qwe'),[isLanguage])
 
     return (<div className={css.header}>
-        <div className={css.logo}>B F</div>
+        <NavLink to='/' className={css.logo}>B F</NavLink>
         <div className={css.gearWheel}>
             <img className={(isActive ? css.active_img : css.notActive_img)} onClick={header} src={gearWheel} alt=""/>
         </div>
