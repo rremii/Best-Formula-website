@@ -13,6 +13,7 @@
     height: calc(20vw + 20vh)
 
   span
+    padding-top: 1rem
     color: #ffffff
     height: 50%
     font-size: 1.6rem
@@ -23,9 +24,13 @@
       justify-content: center
 
   div
+    width: 55%
     display: flex
     height: 50%
+    padding-top: 1rem
     align-items: flex-start
+    justify-content: flex-end
+    flex-wrap: wrap
     @include media-break(585px,max)
       align-items: center
       justify-content: space-evenly
@@ -37,7 +42,8 @@
       display: flex
       justify-content: center
       align-items: center
-      margin-right: 4rem
+      margin-right: 5%
+      margin-left: 5%
       width: calc(3.5rem + 1.8vw)
       height: calc(3.5rem + 1.8vw)
       border-radius: 50%

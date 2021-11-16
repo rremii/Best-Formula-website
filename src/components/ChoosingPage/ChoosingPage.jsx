@@ -1,4 +1,5 @@
 import css from './ChoosingPage.module.sass'
+import {NavLink} from "react-router-dom";
 
 const ChoosingPage = (props) => {
     return <div className={css.ChoosingPage}>
@@ -7,14 +8,15 @@ const ChoosingPage = (props) => {
             Choose your topic
         </span>
         <div className={css.topics__container}>
-            <div>
+            <NavLink to='topic'>
                 <span></span><span></span><span></span><span></span>
                 topic one
-            </div>
-            <div>
+            </NavLink>
+            <NavLink to='topic'>
                 <span></span><span></span><span></span><span></span>
                 topic two
-            </div>
+            </NavLink>
+
         </div>
     </div>
 

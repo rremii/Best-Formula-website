@@ -1,0 +1,59 @@
+@import "src/sass/variables"
+.wrapper
+  display: grid
+  grid-template-rows: minmax((10vh * 0.91),min-content) minmax((85vh * 0.91),min-content)
+  .name
+    display: flex
+    align-items: center
+    background-color: #191919
+    padding-left: 5%
+    padding-bottom: 1%
+    font-size: calc(4rem + 1vw)
+    font-weight: 500
+    color: white
+
+    span
+      position: relative
+      max-width: 80%
+    span::after
+      content: ''
+      position: absolute
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+
+      width: 110%
+      height: 0.2rem
+
+  .content
+    width: 100%
+    display: grid
+    grid-template-columns: 1.5fr 2fr
+    @include media-break(425px,max)
+      grid-template-columns: minmax(80%,min-content) 80%
+      overflow: auto
+
+    div:nth-child(1)
+      grid-column: 1 / 2
+      background-color: #ffffff
+      display: flex
+      flex-wrap: wrap
+      align-content: flex-start
+
+      span
+
+
+        flex-grow: 1
+        padding: calc(0.5rem + 0.5vw)
+        text-align: center
+        min-width: 50%
+        display: inline
+        font-size: calc(3rem + 1.1vw)
+
+    div:nth-child(2)
+      grid-column: 2 / 3
+      background-color: #232323
+      padding: 2%
+      color: white
+      font-size: calc(1.6rem + 0.7vw)

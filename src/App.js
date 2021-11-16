@@ -14,6 +14,7 @@ import {
 import AboutPage from "./components/AboutPage/AboutPage";
 import Footer from "./components/Footer/Footer";
 import ChoosingPage from "./components/ChoosingPage/ChoosingPage";
+import TopicPage from "./components/TopicPage/TopicPage";
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                         </>}/>
                         <Route path="/math" element={<ChoosingPage/>}/>
                         <Route path="/phisics" element={<ChoosingPage/>}/>
+                        <Route path="/math/topic" element={<TopicPage/>}/>
                     </Routes>
 
                     <Footer/>
