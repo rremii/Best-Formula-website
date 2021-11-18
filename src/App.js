@@ -13,10 +13,16 @@ import {
 } from "react-router-dom";
 import AboutPage from "./components/AboutPage/AboutPage";
 import Footer from "./components/Footer/Footer";
-import ChoosingPage from "./components/ChoosingPage/ChoosingPage";
 import TopicPage from "./components/TopicPage/TopicPage";
+import {compose} from "redux";
+import {connect} from "react-redux";
+import ChoosingPageContainer from "./components/ChoosingPage/ChoosingPageContainer";
+import TopicPageContainer from "./components/TopicPage/TopicPageContainer";
 
-function App() {
+
+function App(props) {
+
+
     return (
         <div className="maincontainer">
             <div className="App">
@@ -33,9 +39,10 @@ function App() {
                             <MainPage/>
                             <AboutPage/>
                         </>}/>
-                        <Route path="/math" element={<ChoosingPage/>}/>
-                        <Route path="/phisics" element={<ChoosingPage/>}/>
-                        <Route path="/math/topic" element={<TopicPage/>}/>
+                        <Route path="/math" element={<ChoosingPageContainer/>}/>
+                        <Route path="/phisics" element={<ChoosingPageContainer/>}/>
+                        <Route path="/math/:id" element={<TopicPageContainer/>}/>
+                        <Route path="/phisics/:id" element={<TopicPageContainer/>}/>
                     </Routes>
 
                     <Footer/>
@@ -45,4 +52,14 @@ function App() {
     );
 }
 
-export default App;
+let mapStateToProps = (state) => {
+    return {
+        state: state.choosingPage
+    }
+}
+
+export default compose(
+    connect(mapStateToProps, {}),
+)(App)
+
+

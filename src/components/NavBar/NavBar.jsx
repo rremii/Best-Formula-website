@@ -11,7 +11,7 @@ const NavBar = (props) => {
   };
 
   return (
-    <div className={[css.NavBar, isActive && css.active__navBar].join(" ")}>
+    <div className={[css.NavBar, isActive ? css.active__navBar :''].join(" ")}>
       <div onClick={navBar}>
         <span> </span>
         <span> </span>
@@ -21,7 +21,7 @@ const NavBar = (props) => {
         <>
           <div className={css.math_phisics_open}>
             <NavLink
-              className={({ isActive }) => isActive && css.active__Links_open}
+              className={({ isActive }) => isActive ? css.active__Links_open :''}
               to="/math"
             >
               math
@@ -30,7 +30,7 @@ const NavBar = (props) => {
 
           <div className={css.math_phisics_open}>
             <NavLink
-              className={({ isActive }) =>  isActive && css.active__Links_open}
+              className={({ isActive }) =>  isActive ? css.active__Links_open :''}
               to="/phisics"
             >
               phisics
@@ -41,7 +41,7 @@ const NavBar = (props) => {
         <>
           <div className={css.math_phisics}>
             <NavLink
-              className={({ isActive }) => isActive && css.active__Links}
+              className={({ isActive }) => isActive ? css.active__Links :''}
               to="/math"
             >
               e<sup>i𝝅</sup>= -1
@@ -50,7 +50,7 @@ const NavBar = (props) => {
 
           <div className={css.math_phisics}>
             <NavLink
-              className={({ isActive }) => isActive && css.active__Links}
+              className={({ isActive }) => isActive ? css.active__Links :''}
               to="/phisics"
             >
               E=mc<sup>2</sup>
