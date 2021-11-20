@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import logo from "./logo.svg";
 import "./App.sass";
 import Header from "./components/Header/Header";
@@ -18,19 +18,29 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import ChoosingPageContainer from "./components/ChoosingPage/ChoosingPageContainer";
 import TopicPageContainer from "./components/TopicPage/TopicPageContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import NavBarContainer from "./components/NavBar/NavBarContainer";
+import Preroll from "./components/Common/Preroll/Preroll";
 
 
 function App(props) {
-
+    let [isPreroll, togglePreroll] = useState(false)
+    useEffect(()=>{
+        togglePreroll(true)
+        setTimeout(()=>togglePreroll(false),700)
+    },[props.isLightMod])
 
     return (
         <div className="maincontainer">
             <div className="App">
+                {isPreroll && <Preroll/>}
+
+
                 <header>
-                    <Header/>
+                    <HeaderContainer/>
                 </header>
                 <nav>
-                    <NavBar/>
+                    <NavBarContainer/>
                 </nav>
 
                 <main>
@@ -54,7 +64,9 @@ function App(props) {
 
 let mapStateToProps = (state) => {
     return {
-        state: state.choosingPage
+        state: state.choosingPage,
+        isLightMod: state.MainVariables.isLightMod
+
     }
 }
 

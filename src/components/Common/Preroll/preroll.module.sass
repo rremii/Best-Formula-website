@@ -1,0 +1,32 @@
+
+
+.preroll
+  background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%)
+  position: absolute
+  z-index: 21
+  border-radius: 50%
+  width: 2rem
+  height: 2rem
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  animation-name: preroll
+  animation-duration: 0.7s
+  animation-fill-mode: forwards
+  animation-timing-function: ease-in-out
+  animation-direction: reverse
+
+@keyframes preroll
+  0%
+    opacity: 1
+    width: 2rem
+    height: 2rem
+
+
+  70%
+    opacity: 1
+  100%
+    opacity: 0
+    width: 110vw
+    height: 110vw
+
