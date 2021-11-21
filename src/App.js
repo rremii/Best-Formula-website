@@ -21,6 +21,7 @@ import TopicPageContainer from "./components/TopicPage/TopicPageContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBarContainer from "./components/NavBar/NavBarContainer";
 import Preroll from "./components/Common/Preroll/Preroll";
+import PrerollContainer from "./components/Common/Preroll/PrerollContainer";
 
 
 function App(props) {
@@ -33,7 +34,7 @@ function App(props) {
     return (
         <div className="maincontainer">
             <div className="App">
-                {isPreroll && <Preroll/>}
+                 <PrerollContainer/>
 
 
                 <header>

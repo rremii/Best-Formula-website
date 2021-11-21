@@ -1,24 +1,24 @@
 import {useEffect, useState} from "react";
 import css from './preroll.module.sass'
 
-const Preroll = () => {
+const Preroll = (props) => {
+    debugger
 
-    let [isPreloll, togglePreloll] = useState(false)
+    // let [isNight, toggleToNight] = useState(false)
 
     useEffect(() => {
-        togglePreloll(true)
-        setTimeout(() => {
-                togglePreloll(false)
-            }, 700
-        )
-    }, [])
-
+        // if (props.isPrerollNight === true) toggleToNight(false)
+        // if (props.isPrerollNight === false) toggleToNight(true)
+        console.log(props.isPrerollNight)
+    }, [props.isPreroll])
     return (
         <>
             {
-                isPreloll && <div className={css.preroll}>
-                    <span/>
-                </div>
+                props.isPreroll ?
+                    <div className={[props.isPrerollNight ? css.preroll_night : '', !props.isPrerollNight ? css.preroll : ''].join(' ')}>
+                        <span/>
+                    </div>
+                    : ''
             }
         </>
     )

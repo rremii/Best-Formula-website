@@ -1,295 +1,303 @@
-@import "./src/sass/variables"
-.math_phisics
-  color: color-nav(links)
-  width: calc(2vw + 5rem)
-  height: calc(2vw + 5rem)
-
-  font-size: calc(1.6rem + 0.3vw)
-  margin-bottom: 0.5rem
-  border-radius: 2rem
-  //border: rgba(255, 255, 255, 0.43) 0.1rem solid
-  background-color: color-nav(linksBG)
-  @include media-break(768px, max)
-    display: none
-
-  a
-    font-weight: 500
-    transition: background-color 0.5s
-    color: inherit
-    width: 100%
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
-    border-radius: 2rem
-
-  .active__Links
-    background-color: color-nav(linksActiveBG)
-    border-radius: 2rem
-
-    color: color-nav(linksActive)
+@import "PcNavBar"
+@import "PhoneNavBar"
 
 
-.math_phisics_open:nth-child(3)
-  grid-row: 3 / 4
-
-.math_phisics_open:nth-child(2)
-  grid-row: 2 / 3
-
-.math_phisics_open
-  animation: fade 2s forwards
-  opacity: 0
-  width: 90%
-  border-radius: 0 2rem
-  margin: 0 auto
-  height: 90%
-
-  a
-    text-align: center
-    border-radius: 0 2rem 0 2rem
-    border-left: 0.5rem solid rgb(255, 255, 255)
-    padding-left: 1rem
-    background-color: color-nav(linksBG)
-    display: flex
-    justify-content: center
-    align-items: center
-    overflow: hidden
-    letter-spacing: 1rem
-    font-size: calc(1.5rem + 0.7vw)
-    color: color-nav(links)
-    width: 100%
-    height: 100%
-    transition: background-color 0.5s
-
-  @keyframes fade
-    55%
-      opacity: 0
-    100%
-      opacity: 1
-
-  .active__Links_open
-    background-color: color-nav(linksActiveBG)
-    color: color-nav(linksActive)
-    border-left: 0.5rem solid #36e124
-
-sup
-  font-size: 2rem
-  transform: translateY(-0.4rem)
-//////////////////////////////////////////////////////////////////////////////////////////////
-.NavBar
-  width: 100%
-  height: 100%
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: flex-start
-  border-radius: inherit
-  position: relative
-  overflow: hidden
-  z-index: 5
-  transition: 1.5s
-
-  //////good one for a kight mod//////////
-  //background: linear-gradient(to top right, #45AA6B, #9149AC)
-
-  //background: linear-gradient(to top right, #3BB277, #3D2A95)
-
-  @include media-break(768px, min)
-    background: color-nav(bg)
-  //background-color: transparent
-
-  div:nth-child(1)
-    z-index: 10
-    width: calc(2vw + 5rem)
-    height: calc(2vw + 5rem)
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: space-evenly
-    padding: 0.5rem 0
-
-    @include media-break(768px, max)
-      background-color: color-nav(linksBG)
-      border-radius: 50%
-      position: absolute
-      top: 1%
-      left: 3%
-      visibility: visible
-      padding: 0.7rem 0
-
-    span
-      width: 70%
-      height: 10%
-      background: color-nav(crossBG)
-      //border: 1px solid #04F0FF
-      border-radius: 10px
-      @include media-break(768px, max)
-        width: 55%
-        height: 7%
-
-.NavBar::after
-  content: '123'
-  position: absolute
-  top: 1%
-  left: 3%
-  width: calc(2vw + 5rem)
-  height: calc(2vw + 5rem)
-  transform: scale(0.5)
-  opacity: 0
-  //background: linear-gradient(to top right, #174A31, #221857)
-
-  transition: 1.5s
-  border-radius: 20rem
-  z-index: -1
-
-.active__navBar::after
-  @include media-break(768px, max)
-    width: 100%
-    height: 100%
-    background: color-nav(bg)
-
-    transform: scale(2)
-    opacity: 1
 
 
-.active__navBar
-  width: calc(17rem + 10vw)
-  height: $heigth-mian
-  visibility: visible
-  display: grid
-  grid-gap: 1rem
-  grid-template-rows: calc(2vw + 5rem) calc(2vw + 5rem) calc(2vw + 5rem)
-  grid-template-columns: 1fr
-  background-color: transparent
-
-  @include media-break(768px, max)
-    background-color: transparent
-
-  div:nth-child(1)
-    position: absolute
-    background-color: transparent
-    border-radius: 50%
-    top: 0%
-    left: calc(100% - (2vw + 5rem))
-    visibility: visible
-    padding: 0.7rem 0
-    animation-duration: 2s
-    animation-name: burgerActive
-
-    span:nth-child(1)
-      transform: rotateZ(45deg)
-      animation-name: crossLine1
-      animation-duration: 2s
-      //top: 50%
-      //position: absolute
-      animation-fill-mode: forwards
-
-    span:nth-child(2)
-      opacity: 0
-      animation-name: crossLine2
-      animation-duration: 2s
-      animation-fill-mode: forwards
-
-    span:nth-child(3)
-      //position: absolute
-      //top: 50%
-      transform: rotateZ(-45deg)
-      animation-name: crossLine3
-      animation-duration: 2s
-      animation-fill-mode: forwards
-
-
-  @keyframes burgerActive
-    0%
-      left: 3%
-
-    25%
-      opacity: 0.5
-      left: 3%
-
-
-    45%
-      opacity: 0
-      left: -9rem
-
-    50%
-      opacity: 0
-      left: calc(100% - (2vw + 5rem))
-
-    55%
-      opacity: 0
-    75%
-      opacity: 0.5
-
-    100%
-      opacity: 1
-
-  @keyframes crossLine1
-    0%
-      transform: rotateZ(0deg)
-
-    45%
-      transform: rotateZ(0deg)
-      position: static
-
-    60%
-      transform: rotateZ(45deg)
-      position: absolute
-      top: 50%
-
-    100%
-      position: absolute
-      top: 50%
-  @keyframes crossLine2
-    0%
-      opacity: 1
-
-    45%
-      opacity: 1
-
-    50%
-      opacity: 0
-    100%
-      opacity: 0
-  @keyframes crossLine3
-    0%
-      transform: rotateZ(0deg)
-
-
-    45%
-      transform: rotateZ(0deg)
-      position: static
-
-    60%
-      transform: rotateZ(-45deg)
-      position: absolute
-      top: 50%
-    100%
-      position: absolute
-      top: 50%
-
-
-/////////////////////////////////////NIGHT  MOD //////////////////////////////////////////////////
-.NavBar_Night
-  background: linear-gradient(to bottom right, #7FAC90, #10233B)
-
-  div:nth-child(1)
-    span
-      background: linear-gradient(to bottom right, #3210BF, #E2B194)
-
-  .math_phisics, .math_phisics_open
-    background-color: rgba(43, 43, 43, 0.56)
-
-    span
-      background: #cccbcb
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-
-  .active__Links_open, .active__Links
-    background: linear-gradient(to bottom right, #F7CFEF, #B6C9A5)
-    span
-      background: linear-gradient(to bottom right, #530ECE, #B55B75)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-  .active__Links_open
-    border-left: white
+//@import "./src/sass/variables"
+//.math_phisics
+//  color: color-nav(links)
+//  width: calc(2vw + 5rem)
+//  height: calc(2vw + 5rem)
+//
+//  font-size: calc(1.6rem + 0.3vw)
+//  margin-bottom: 0.5rem
+//  border-radius: 2rem
+//  //border: rgba(255, 255, 255, 0.43) 0.1rem solid
+//  background-color: color-nav(linksBG)
+//  @include media-break(768px, max)
+//    display: none
+//
+//  a
+//    font-weight: 500
+//    transition: background-color 0.5s
+//    color: inherit
+//    width: 100%
+//    height: 100%
+//    display: flex
+//    justify-content: center
+//    align-items: center
+//    border-radius: 2rem
+//
+//  .active__Links
+//    background-color: color-nav(linksActiveBG)
+//    border-radius: 2rem
+//
+//    color: color-nav(linksActive)
+//
+//
+//.math_phisics_open:nth-child(3)
+//  grid-row: 3 / 4
+//
+//.math_phisics_open:nth-child(2)
+//  grid-row: 2 / 3
+//
+//.math_phisics_open
+//  animation: fade 2s forwards
+//  opacity: 0
+//  width: 90%
+//  border-radius: 0 2rem
+//  margin: 0 auto
+//  height: 90%
+//
+//  a
+//    text-align: center
+//    border-radius: 0 2rem 0 2rem
+//    border-left: 0.5rem solid rgb(255, 255, 255)
+//    padding-left: 1rem
+//    background-color: color-nav(linksBG)
+//    display: flex
+//    justify-content: center
+//    align-items: center
+//    overflow: hidden
+//    letter-spacing: 1rem
+//    font-size: calc(1.5rem + 0.7vw)
+//    color: color-nav(links)
+//    width: 100%
+//    height: 100%
+//    transition: background-color 0.5s
+//
+//  @keyframes fade
+//    55%
+//      opacity: 0
+//    100%
+//      opacity: 1
+//
+//  .active__Links_open
+//    background-color: color-nav(linksActiveBG)
+//    color: color-nav(linksActive)
+//    border-left: 0.5rem solid #36e124
+//
+//sup
+//  font-size: 2rem
+//  transform: translateY(-0.4rem)
+////////////////////////////////////////////////////////////////////////////////////////////////
+//.NavBar
+//  width: 100%
+//  height: 100%
+//  display: flex
+//  flex-direction: column
+//  align-items: center
+//  justify-content: flex-start
+//  border-radius: inherit
+//  position: relative
+//  overflow: hidden
+//  z-index: 5
+//  transition: 1.5s
+//
+//  //////good one for a kight mod//////////
+//  //background: linear-gradient(to top right, #45AA6B, #9149AC)
+//
+//  //background: linear-gradient(to top right, #3BB277, #3D2A95)
+//
+//  @include media-break(768px, min)
+//    background: color-nav(bg)
+//  //background-color: transparent
+//
+//  div:nth-child(1)
+//    z-index: 10
+//    width: calc(2vw + 5rem)
+//    height: calc(2vw + 5rem)
+//    display: flex
+//    flex-direction: column
+//    align-items: center
+//    justify-content: space-evenly
+//    padding: 0.5rem 0
+//
+//    @include media-break(768px, max)
+//      background-color: color-nav(linksBG)
+//      border-radius: 50%
+//      position: absolute
+//      top: 1%
+//      left: 3%
+//      visibility: visible
+//      padding: 0.7rem 0
+//
+//    span
+//      width: 70%
+//      height: 10%
+//      background: color-nav(crossBG)
+//      //border: 1px solid #04F0FF
+//      border-radius: 10px
+//      @include media-break(768px, max)
+//        width: 55%
+//        height: 7%
+//
+//.NavBar::after
+//  content: '123'
+//  position: absolute
+//  top: 1%
+//  left: 3%
+//  width: calc(2vw + 5rem)
+//  height: calc(2vw + 5rem)
+//  transform: scale(0.5)
+//  opacity: 0
+//  //background: linear-gradient(to top right, #174A31, #221857)
+//
+//  transition: 1.5s
+//  border-radius: 20rem
+//  z-index: -1
+//
+//.active__navBar::after
+//  @include media-break(768px, max)
+//    width: 100%
+//    height: 100%
+//    background: color-nav(bg)
+//
+//    transform: scale(2)
+//    opacity: 1
+//
+//
+//.active__navBar
+//  width: calc(17rem + 10vw)
+//  height: $heigth-mian
+//  visibility: visible
+//  display: grid
+//  grid-gap: 1rem
+//  grid-template-rows: calc(2vw + 5rem) calc(2vw + 5rem) calc(2vw + 5rem)
+//  grid-template-columns: 1fr
+//  background-color: transparent
+//
+//  @include media-break(768px, max)
+//    background-color: transparent
+//
+//  div:nth-child(1)
+//    position: absolute
+//    background-color: transparent
+//    border-radius: 50%
+//    top: 0%
+//    left: calc(100% - (2vw + 5rem))
+//    visibility: visible
+//    padding: 0.7rem 0
+//    animation-duration: 2s
+//    animation-name: burgerActive
+//
+//    span:nth-child(1)
+//      transform: rotateZ(45deg)
+//      animation-name: crossLine1
+//      animation-duration: 2s
+//      //top: 50%
+//      //position: absolute
+//      animation-fill-mode: forwards
+//
+//    span:nth-child(2)
+//      opacity: 0
+//      animation-name: crossLine2
+//      animation-duration: 2s
+//      animation-fill-mode: forwards
+//
+//    span:nth-child(3)
+//      //position: absolute
+//      //top: 50%
+//      transform: rotateZ(-45deg)
+//      animation-name: crossLine3
+//      animation-duration: 2s
+//      animation-fill-mode: forwards
+//
+//
+//  @keyframes burgerActive
+//    0%
+//      left: 3%
+//
+//    25%
+//      opacity: 0.5
+//      left: 3%
+//
+//
+//    45%
+//      opacity: 0
+//      left: -9rem
+//
+//    50%
+//      opacity: 0
+//      left: calc(100% - (2vw + 5rem))
+//
+//    55%
+//      opacity: 0
+//    75%
+//      opacity: 0.5
+//
+//    100%
+//      opacity: 1
+//
+//  @keyframes crossLine1
+//    0%
+//      transform: rotateZ(0deg)
+//
+//    45%
+//      transform: rotateZ(0deg)
+//      position: static
+//
+//    60%
+//      transform: rotateZ(45deg)
+//      position: absolute
+//      top: 50%
+//
+//    100%
+//      position: absolute
+//      top: 50%
+//  @keyframes crossLine2
+//    0%
+//      opacity: 1
+//
+//    45%
+//      opacity: 1
+//
+//    50%
+//      opacity: 0
+//    100%
+//      opacity: 0
+//  @keyframes crossLine3
+//    0%
+//      transform: rotateZ(0deg)
+//
+//
+//    45%
+//      transform: rotateZ(0deg)
+//      position: static
+//
+//    60%
+//      transform: rotateZ(-45deg)
+//      position: absolute
+//      top: 50%
+//    100%
+//      position: absolute
+//      top: 50%
+//
+//
+///////////////////////////////////////NIGHT  MOD //////////////////////////////////////////////////
+//.NavBar_Night
+//  background: linear-gradient(to bottom right, #7FAC90, #10233B)
+//
+//  div:nth-child(1)
+//    span
+//      background: linear-gradient(to bottom right, #3210BF, #E2B194)
+//
+//  .math_phisics, .math_phisics_open
+//    background-color: rgba(43, 43, 43, 0.56)
+//
+//    span
+//      background: #cccbcb
+//      -webkit-background-clip: text
+//      -webkit-text-fill-color: transparent
+//
+//  .active__Links_open, .active__Links
+//    background: linear-gradient(to bottom right, #F7CFEF, #B6C9A5)
+//
+//    span
+//      background: linear-gradient(to bottom right, #530ECE, #B55B75)
+//      -webkit-background-clip: text
+//      -webkit-text-fill-color: transparent
+//
+//  .active__Links_open
+//    border-left: white

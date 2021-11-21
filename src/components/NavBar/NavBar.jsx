@@ -13,7 +13,8 @@ const NavBar = (props) => {
     return (
         <div
             className={[css.NavBar, isActive ? css.active__navBar : '',
-                props.isLightMod ? css.NavBar_Night : ''].join(" ")}>
+                props.isLightMod && !isActive  ? css.NavBar_Night : '',
+                props.isLightMod && isActive  ? css.NavBar_Night_Active : ''].join(" ")}>
             <div onClick={navBar}>
                 <span> </span>
                 <span> </span>

@@ -2,7 +2,7 @@ import css from './Header.module.sass'
 import gearWheel from './../../images/white-gear-icon-png-13.jpg'
 import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import {toggleLightMod} from "../../Redux/MainReduser";
+import {toggleLightMod, togglePrerollToNight} from "../../Redux/MainReduser";
 import Preroll from "../Common/Preroll/Preroll";
 
 const Header = (props) => {
@@ -19,22 +19,79 @@ const Header = (props) => {
 
     let [isLightMod, toggleLightMod] = useState(false)
     const lightMod = (toggleTo) => {
+
+        setTimeout(() => {
+
+        if (!toggleTo && toggleTo !== false) toggleActive(false)
+
+        if (!isLightMod && toggleTo === true) {
+            toggleActive(false);
+        }
+
+
+        if (isLightMod && toggleTo === false) {
+            toggleActive(false);
+        }
+        }, 100)
+
+        if (isLightMod !== toggleTo) props.togglePreroll(true)
+
+
+        /////
+        // if (!toggleTo && toggleTo !== false) {
+        //     props.toggleLightMod()
+        //     if (isLightMod) {
+        //         toggleLightMod(false)
+        //     } else toggleLightMod(true)
+        // } else toggleLightMod(toggleTo)
+
         /////
         if (!toggleTo && toggleTo !== false) {
-            props.toggleLightMod()
-            if (isLightMod) toggleLightMod(false)
-            else toggleLightMod(true)
-        } else toggleLightMod(toggleTo)
+            if (props.isPrerollNight) props.togglePrerollToNight(false)
+            else props.togglePrerollToNight(true)
+        }
+
+        if (props.isPrerollNight && toggleTo === false) {
+            props.togglePrerollToNight(false);
+        }
+
+
+        if (!props.isPrerollNight && toggleTo === true) {
+            props.togglePrerollToNight(true);
+        }
         /////
-        if (props.isLightMod && toggleTo === false) {
-            props.toggleLightMod();
-        }
+        setTimeout(() => {
+            if (!props.isLightMod && toggleTo === true) {
+                props.togglePreroll(false)
+            }
+            if (props.isLightMod && toggleTo === false) {
+                props.togglePreroll(false)
+            }
+            if (!toggleTo) {
+                props.togglePreroll(false)
+            }
+        }, 1500)
+
+        setTimeout(() => {
 
 
-        if (!props.isLightMod && toggleTo === true) {
-            props.toggleLightMod();
-        }
+            /////
+            if (!toggleTo && toggleTo !== false) {
+                props.toggleLightMod()
+                if (isLightMod) {
+                    toggleLightMod(false)
+                } else toggleLightMod(true)
+            } else toggleLightMod(toggleTo)
+            /////
+            if (props.isLightMod && toggleTo === false) {
+                props.toggleLightMod();
+            }
 
+
+            if (!props.isLightMod && toggleTo === true) {
+                props.toggleLightMod();
+            }
+        }, 1100)
 
     }
 
@@ -62,7 +119,7 @@ const Header = (props) => {
                 <img onClick={() => lightMod(false)}
                      src="https://cdn.iconscout.com/icon/premium/png-512-thumb/half-moon-2739808-2271148.png" alt=""/>
 
-                <div onClick={() => lightMod()}><span/></div>
+                <div   onClick={() => lightMod()}><span/></div>
 
                 <img onClick={() => lightMod(true)}
                      src="https://static.tildacdn.com/tild3866-3436-4065-b562-613634306230/photo.png" alt=""/>

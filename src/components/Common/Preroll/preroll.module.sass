@@ -1,7 +1,8 @@
 
 
 .preroll
-  background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%)
+  perspective: 2rem
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%)
   position: absolute
   z-index: 21
   border-radius: 50%
@@ -9,24 +10,39 @@
   height: 2rem
   top: 50%
   left: 50%
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%) rotateX(90deg)
   animation-name: preroll
-  animation-duration: 0.7s
+  animation-duration: 1.5s
   animation-fill-mode: forwards
   animation-timing-function: ease-in-out
-  animation-direction: reverse
+  //animation-direction: reverse
 
 @keyframes preroll
   0%
+
+
     opacity: 1
     width: 2rem
     height: 2rem
-
-
-  70%
+  10%
     opacity: 1
+    width: calc(10vw + 10vh)
+    height: calc(10vw + 10vh)
+
+  50%
+    transform: rotateX(0) translate(-50%,-50%)
+    opacity: 1
+    width: calc(10vw + 10vh)
+    height: calc(10vw + 10vh)
   100%
+    transform: rotateX(0) translate(-50%,-50%)
+
     opacity: 0
-    width: 110vw
-    height: 110vw
+    width: calc(100vw + 100vh)
+    height: calc(100vw + 100vh)
+
+.preroll_night
+  @extend .preroll
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)
+
 

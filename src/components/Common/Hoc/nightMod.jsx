@@ -3,9 +3,11 @@ import {useEffect, useState} from "react";
 
 const nightMod = (Component) => (props) => {
 
+    setTimeout(() => {
 
-    useEffect(() => {
-    }, [props.isLightMod])
+    }, 700)
+        useEffect(() => {
+        }, [props.isLightMod])
 
     return <Component   {...props}/>
 
