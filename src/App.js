@@ -22,6 +22,10 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBarContainer from "./components/NavBar/NavBarContainer";
 import Preroll from "./components/Common/Preroll/Preroll";
 import PrerollContainer from "./components/Common/Preroll/PrerollContainer";
+import FooterContainer from "./components/Footer/FooterContainer";
+import MainPageContainer from "./components/MainPage/MainPageContainer";
+import AboutPageContainer from "./components/AboutPage/AboutPageContainer";
+import withRoute from "./components/Common/Hoc/withRoute";
 
 
 function App(props) {
@@ -47,8 +51,8 @@ function App(props) {
                 <main>
                     <Routes>
                         <Route path='/' element={<>
-                            <MainPage/>
-                            <AboutPage/>
+                            <MainPageContainer/>
+                            <AboutPageContainer/>
                         </>}/>
                         <Route path="/math" element={<ChoosingPageContainer/>}/>
                         <Route path="/phisics" element={<ChoosingPageContainer/>}/>
@@ -56,7 +60,7 @@ function App(props) {
                         <Route path="/phisics/:id" element={<TopicPageContainer/>}/>
                     </Routes>
 
-                    <Footer/>
+                    <FooterContainer/>
                 </main>
             </div>
         </div>

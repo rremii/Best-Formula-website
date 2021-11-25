@@ -11,13 +11,15 @@ const ChoosingPageContainer = (props) => {
 
 
 
-    return <ChoosingPage choosingPage={data}/>
+    return <ChoosingPage {...props} choosingPage={data}/>
 
 
 }
 let mapStateToProps = (state) => {
     return {
-        choosingPage: getTopicAllsSelector(state)
+        choosingPage: getTopicAllsSelector(state),
+        isLightMod: state.MainVariables.isLightMod,
+
     }
 
 }

@@ -1,14 +1,18 @@
 import css from './Header.module.sass'
+import React from "react";
 import gearWheel from './../../images/white-gear-icon-png-13.jpg'
 import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {toggleLightMod, togglePrerollToNight} from "../../Redux/MainReduser";
 import Preroll from "../Common/Preroll/Preroll";
+import {getSearchData, setSearchString} from "../../Redux/SearchReducer";
 
 const Header = (props) => {
 
 
+
     let [isActive, toggleActive] = useState(false)
+
     window.active = isActive
 
     const header = (props) => {
@@ -88,14 +92,32 @@ const Header = (props) => {
         else toggleLanguage(true)
     }
 
-    // useEffect(()=>console.log('qwe'),[isLanguage])
 
-    return (<div className={css.header}>
+    let search = React.useRef()
+    const getSearchData = () => {
+        console.log(search.current.value)
+        props.setSearchString(search.current.value)
+        props.getSearchData()
+    }
+
+    return (<div className={[css.header, props.isLightMod ? css.header_night : ''].join(' ')}>
 
 
         <NavLink to='/' className={css.logo}>B F</NavLink>
 
         <div className={css.gearWheel}>
+            <div className={css.search}>
+                <input onChange={getSearchData} ref={search} value={props.searchingString} type="text"/>
+                <div>
+                    {
+                        props.searchingData.map(({id, topic, type}) => {
+                            return <NavLink key={topic} to={`${type}/${'' + id}`}>
+                                {topic}-{type}
+                            </NavLink>
+                        })
+                    }
+                </div>
+            </div>
             <img className={(isActive ? css.active_img : css.notActive_img)} onClick={header} src={gearWheel} alt=""/>
         </div>
 

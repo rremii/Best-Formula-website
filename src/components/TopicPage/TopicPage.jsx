@@ -1,8 +1,14 @@
 import css from './TopicPage.module.sass'
+import {useEffect} from "react";
 
 const TopicPage = (props) => {
-    console.log(props)
-    return <div className={css.wrapper}>
+
+    // useEffect(()=>{
+    //     props.url(window.location.pathname)
+    //     console.log(window.location.pathname)
+    // },[window.location.pathname])
+    // console.log(props)
+    return <div className={[css.wrapper,props.isLightMod?css.wrapper_night:''].join(' ')}>
         <div className={css.name}>
             <span>{props.name}</span>
         </div>

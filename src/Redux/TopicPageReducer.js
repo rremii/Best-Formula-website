@@ -17,13 +17,11 @@ let initialState = {
 const TopicPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_MATH_DATA:
-            debugger
             return {
                 ...state,
                 currentTopic: {...state.mathData.filter(({id}) => id === action.id)}
             }
         case GET_PHISICS_DATA:
-            debugger
             return {
                 ...state,
                 currentTopic: {...state.phisicData.filter(({id}) => id === action.id)}

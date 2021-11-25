@@ -3,15 +3,16 @@ import {NavLink} from "react-router-dom";
 
 const ChoosingPage = (props) => {
     // console.log(props.choosingPage)
-    return <div className={css.ChoosingPage}>
+    return <div className={[css.ChoosingPage, props.isLightMod ? css.ChoosingPage_night : ''].join(' ')}>
         <span>
             <div></div>
             Choose your topic
         </span>
         <div className={css.topics__container}>
             {props.choosingPage.map(({id, topic}) => {
-                return <NavLink key={id} to={ '' + id}>
+                return <NavLink key={id} to={'' + id}>
                     <span></span><span></span><span></span><span></span>
+                    {/*<span className={css.text}></span>*/}
                     {topic}
                 </NavLink>
             })}

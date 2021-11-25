@@ -1,8 +1,10 @@
 const TOGGLE_LIGHT_MOD = 'TOGGLE_LIGHT_MOD'
 const TOGGLE_PREROLL = 'TOGGLE_PREROLL'
 const TOGGLE_PREROLL_TO_NIGHT = 'TOGGLE_PREROLL_TO_NIGHT'
+const URL = 'URL'
 
 let initialState = {
+    // url: '',
     isLightMod: false,
     isPreroll: false,
     isPrerollNight: false,
@@ -10,7 +12,7 @@ let initialState = {
 
 
 const MainReducer = (state = initialState, action) => {
-    debugger
+
 
     switch (action.type) {
         case TOGGLE_LIGHT_MOD:
@@ -28,6 +30,12 @@ const MainReducer = (state = initialState, action) => {
                 ...state,
                 isPrerollNight: state.isPreroll = action.toggleTo
             }
+
+        // case URL:
+        //     return {
+        //         ...state,
+        //         url: action.url
+        //     }
         default:
             return state
     }
@@ -41,4 +49,7 @@ export const togglePreroll = (toggleTo) => {
 export const togglePrerollToNight = (toggleTo) => {
     return {type: TOGGLE_PREROLL_TO_NIGHT, toggleTo}
 }
+// export const url = (url) => {
+//     return {type: URL, url}
+// }
 export default MainReducer

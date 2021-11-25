@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import css from './preroll.module.sass'
 
 const Preroll = (props) => {
-    debugger
 
     // let [isNight, toggleToNight] = useState(false)
 

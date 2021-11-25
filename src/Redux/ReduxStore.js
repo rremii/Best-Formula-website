@@ -3,9 +3,11 @@ import thunkMiddleware from "redux-thunk"
 import choosingPageReducer from "./ChoosingPageReducer";
 import TopicPageReducer from "./TopicPageReducer";
 import MainReducer from "./MainReduser";
+import SearchReducer from "./SearchReducer";
 
 
 let reducers = combineReducers({
+    SearchPage :SearchReducer,
     MainVariables: MainReducer,
     topicPage: TopicPageReducer,
     choosingPage: choosingPageReducer,
