@@ -1,179 +1,50 @@
-@import "src/sass/variables"
 .header
-  z-index: 15
-  width: 100%
-  height: 100%
-  border-radius: inherit
-  background-color: color-header(bg)
-  display: grid
-  grid-template-columns: 1fr 18fr
-  position: relative
-
-  &::after
-    content: ''
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 0.3rem
-    background: color-header(line)
-
-  .logo
-    width: calc(7rem + 1.8vw)
-    display: flex
-    justify-content: center
-    transform: scale(0.9)
-    transition: 0.5s
-    font-family: Roboto
-    font-style: normal
-    font-weight: normal
-    font-size: calc(2.5rem + 1vw)
-    align-items: center
-    text-align: center
-    color: color-header(logo)
-  //text-shadow: 1px 2px 2px #5BF5FF
-  .logo:hover
-    transform: scale(1)
-
-  .gearWheel
-    height: 100%
-    display: flex
-    align-items: center
-    justify-content: flex-end
-    padding-right: calc(2rem + 1vw)
-
-    img
-      width: calc(2rem + 0.8vw + 0.8vh)
-      cursor: pointer
-
-//////////
-.active_img
-  transform: rotateZ(120deg)
-  transition: 1.5s
-
-.notActive_img
-  transform: rotateZ(-120deg)
-  transition: 1s
-
-
-.pop_up
-  position: absolute
-  top: 100%
-  right: 0
-  width: calc(15rem + 10vw)
-  height: calc(20rem + 5vw)
-  background-color: color-header(pop_up)
-  transform: scaleY(0)
-  transform-origin: top
-  transition: 1s
   display: flex
-  flex-direction: column
   align-items: center
-  justify-content: space-evenly
-
-  &__lightLvl
-    width: 85%
-    height: 20%
-    //color: white
+  justify-content: space-between
+  position: absolute
+  height: calc(5rem + 3vw)
+  width: 100%
+  top: 0
+  left: 0
+  background-color: rgba(154, 39, 39, 0.32)
+  box-shadow: 0px 4px 5px 3px rgba(0, 0, 0, 0.3)
+  z-index: 5
+  .burger
     display: flex
-    justify-content: space-between
+    flex-direction: column
     align-items: center
-
-    div
-      cursor: pointer
-      position: relative
-      flex-grow: 1
-      margin: 0 1rem
-      height: 70%
-      border-radius: 2rem
-      border: white 0.2rem solid
-
-      span
-        transition: 0.5s
-        position: absolute
-        width: calc(1.8rem + 0.8vw)
-        top: 50%
-        left: 3%
-        transform: translateY(-50%)
-        border-radius: 50%
-        height: calc(1.8rem + 0.8vw)
-        background-color: white
-
-    img
-      cursor: pointer
-      width: 20%
-      height: 100%
-      object-fit: contain
-      background-color: transparent
-
-  &__lightLvl__active
-    div
-      span
-        left: calc(97% - (1.8rem + 0.8vw))
-
-  &__language
-    width: 85%
-    height: 20%
-    display: flex
-    align-items: center
-    justify-content: space-between
-
+    justify-content: space-evenly
+    width: 11rem
+    height: 100%
     span
-      cursor: pointer
-      width: 20%
-      font-size: calc(1rem + 0.9vw)
-      text-align: center
-
-    div
-      cursor: pointer
-      position: relative
-      flex-grow: 1
-      margin: 0 1rem
-      height: 70%
-      border-radius: 2rem
-      border: white 0.2rem solid
-
-      span
-        transition: 0.5s
-        position: absolute
-        width: calc(1.8rem + 0.8vw)
-        top: 50%
-        left: 3%
-        transform: translateY(-50%)
-        border-radius: 50%
-        height: calc(1.8rem + 0.8vw)
-        background-color: white
-
-  &__language__active
-    div
-      span
-        left: calc(97% - (1.8rem + 0.8vw))
-
-
-.active
-  transform: scaleY(1)
-
-.disable
-  pointer-events: none
-.search
-  position: relative
-  div
-    background-color: white
-    position: absolute
-    a
-      display: block
-      color: #0D0310
-      font-size: 2rem
-/////////////////////////////////NIGHT MOD////////////////////////////////////////////////////////////////////
-.header_night
-  //background: linear-gradient(to left, #2F1337, #4EC3C3)
-
-  //background: linear-gradient(to top left, #301337, #4EC3C3)
-  //background: linear-gradient(351deg, rgba(48,19,55,1) 0%, rgb(78, 195, 195) 67%)
-  //background: linear-gradient(to bottom right, #7FAC90, #10233B)
-  background: linear-gradient(-253.29deg, #4D5EF5 2.72%, #FF00E5 95.17%)
-
-  //background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)
+      height: 9%
+      background-color: rgba(53, 14, 14, 0.86)
+      width: 75%
+      background-blend-mode: soft-light
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3)
   .logo
-
-    color: #090808
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+  .different
+    display: flex
+    justify-content: flex-end
+    .gearWheel
+      margin: 0 3rem
+    .searchContainer
+      //position: relative
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      width: 7.5rem
+      height: 7.5rem
+      input
+        //transform: scaleX(0)
+        //transform-origin: right
+      img
+        //position: absolute
+        //right: 0
+        //top: 50%
+        //transform: translateY(-50%)
+        height: 80%

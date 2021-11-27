@@ -36,17 +36,12 @@ function App(props) {
     },[props.isLightMod])
 
     return (
-        <div className="maincontainer">
             <div className="App">
-                 <PrerollContainer/>
 
 
-                <header>
+                <>
                     <HeaderContainer/>
-                </header>
-                <nav>
-                    <NavBarContainer/>
-                </nav>
+               </>
 
                 <main>
                     <Routes>
@@ -63,7 +58,6 @@ function App(props) {
                     <FooterContainer/>
                 </main>
             </div>
-        </div>
     );
 }
 

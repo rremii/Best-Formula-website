@@ -1,35 +1,100 @@
 @import "src/sass/variables"
-.MainPage
-  width: 100%
+
+.arrow
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  left: 21%
+  bottom: 5%
+  width: calc(7rem + 3vw)
+  @include media-break(1200px,max)
+    display: none
+  img
+    width: 100%
+    height: 100%
+.backGround
+  position: absolute
   left: 0
   top: 0
-  position: relative
-  //display: flex
+  width: 100%
+  height: 100%
+  z-index: -1
+  opacity: 1
+  object-fit: cover
+.MainPage
+  overflow: hidden
+  width: 100%
+  padding-top: 10rem
   display: grid
-  //justify-content: center
-  //align-content: center
-  grid-template-rows: minmax($heigth-mian,min-content)
-  border-radius: inherit
-  background-color: color-main(main)
+  grid-template-rows: minmax(calc(100vh - 10rem), min-content)
+  grid-template-columns: 4fr 3fr
+  position: relative
+  z-index: 1
+  @include media-break(900px, max)
+    grid-template-columns: 1fr
+    grid-template-rows: minmax(calc(33.4vh - 5rem), min-content) minmax(calc(66.6vh - 5rem), min-content)
 
 
-  div
-    z-index: -1
-    width: max-content
-    position: fixed
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    font-size: calc(2rem + 2.5vw)
-    line-height: calc(3rem + 5vw)
+  .contentContainer
+
+
+    padding: 10% 5% 0% 5%
+    @include media-break(1100px, max)
+      padding: 17% 5% 0% 5%
+    @include media-break(900px, max)
+      padding-top: 3%
+      padding-right: 10%
+      padding-left: 10%
+    @include media-break(500px, max)
+      padding-top: 10%
+      padding-left: 2%
+    .content
+      font-family: Philosopher
+
+      h1
+        span
+          text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25)
+          color: white
+          letter-spacing: 1rem
+          font-weight: 700
+          line-height: calc(2.5rem + 3.4vw)
+          padding: 0
+          display: block
+
+        span:nth-child(1)
+          padding-left: calc(2rem + 1.5vw)
+          font-size: calc(2.3rem + 7vw)
+
+        span:nth-child(2)
+          font-size: calc(2.3rem + 10vw)
+
+      h2
+        //padding-left: 3%
+        word-spacing: calc(0.1rem + 0.5vw)
+        margin-top: calc(1rem + 2vw)
+        line-height: calc(1.5rem + 3vw)
+        font-size: calc(1.3rem + 2.5vw)
+        letter-spacing: 0.5rem
+        @include media-break(900px, max)
+          word-spacing: calc(0.1rem + 0.1vw)
+          //text-align: center
+          //padding-left: 1%
+          letter-spacing: 0.1rem
+
+  .imgContainer
+    height: 100%
+    //overflow: hidden
+    width: 100%
     display: flex
-    align-items: center
     justify-content: center
-    text-align: center
-    font-family: Oxygen Mono
-    font-style: normal
-    font-weight: normal
-    letter-spacing: 0.5rem
-    word-spacing: calc(0.5rem + 1vw)
-    color: color-main(text)
+    align-items: center
+    @include media-break(768px,max)
+      align-items: flex-start
+    img
+      opacity: 1
+      width: calc(26rem + 25vw)
+      object-fit: contain
+
+///////////////////////////////////////////////////////////////////////////
 .MainPage_night

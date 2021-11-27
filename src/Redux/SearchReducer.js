@@ -19,18 +19,17 @@ let initialState = {
 
 
 const SearchReducer = (state = initialState, action) => {
-debugger
 
     switch (action.type) {
         case GET_SEARCH_DATA:
             return {
                 ...state,
                 searchingData: [
-                    ...state.mathData.filter(({id, topic})=>topic.includes(state?.searchString)).map(({id, topic, type}) => {
+                    ...state.mathData.filter(({id, topic}) => topic.includes(state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
                             return {id, topic, type}
                         }
                     ),
-                    ...state.phisicData.filter(({id, topic})=>topic.includes(state?.searchString)).map(({id, topic, type}) => {
+                    ...state.phisicData.filter(({id, topic}) => topic.includes(state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
                             return {id, topic, type}
                         }
                     ),
@@ -39,7 +38,7 @@ debugger
         case SET_SEARCH_STRING:
             return {
                 ...state,
-                searchString:  action.string ? action.string : null
+                searchString: action.string ? action.string : null
             }
 
         default:
@@ -50,7 +49,7 @@ export const getSearchData = () => {
     return {type: GET_SEARCH_DATA,}
 }
 export const setSearchString = (string) => {
-    return {type: SET_SEARCH_STRING,string}
+    return {type: SET_SEARCH_STRING, string}
 }
 
 export default SearchReducer
