@@ -2,9 +2,19 @@ import css from "./Header.module.sass";
 import React from "react";
 import logo from './../../images/logo.svg'
 import gearWheel from './../../images/gearWheel.svg'
-import search from './../../images/search.svg'
+import searchImg from './../../images/search.svg'
+import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
+
+    let search = React.useRef()
+    const getSearchData = () => {
+        debugger
+        console.log(search.current.value)
+        props.setSearchString(search.current.value)
+        props.getSearchData()
+    }
+
     return (
         <div className={[css.header, props.isLightMod ? css.header_night : ""].join(' ')}>
             <div className={css.burger}>
@@ -17,8 +27,21 @@ const Header = (props) => {
             </div>
             <div className={css.different}>
                 <div className={css.searchContainer}>
-                    <input type="text"/>
-                    <img src={search} alt=""/>
+
+                    <input onChange={getSearchData} ref={search} value={props.searchingString} type="text"/>
+                    <div>
+
+                        <img src={searchImg} alt=""/>
+                    </div>
+                    <article className={css.searchingDataContainer}>
+                        {
+                            props.searchingData.map(({id, topic, type}) => {
+                                return <NavLink key={topic} to={`${type}/${'' + id}`}>
+                                    {topic}-{type}
+                                </NavLink>
+                            })
+                        }
+                    </article>
                 </div>
                 <div className={css.gearWheel}>
                     <img src={gearWheel} alt=""/>
