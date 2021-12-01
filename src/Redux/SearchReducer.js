@@ -5,14 +5,19 @@ const SET_SEARCH_STRING = 'SET_SEARCH_STRING'
 
 
 let initialState = {
-    searchString: null,
+    searchString: '',
     mathData: [
         {id: '1', topic: 'topic1', type: 'math'},
-        {id: '2', topic: 'some name1', type: 'math'}
+        {id: '2', topic: 'some name1', type: 'math'},
+        {id: '3', topic: 'hey mert', type: 'math'},
+        {id: '4', topic: 'guys i really need a server', type: 'math'},
     ],
     phisicData: [
         {id: '1', topic: 'topic2', type: 'phisics'},
-        {id: '2', topic: 'some name2', type: 'phisics'}
+        {id: '2', topic: 'some name2', type: 'phisics'},
+        {id: '3', topic: 'fk ur assh*le', type: 'phisics'},
+        {id: '4', topic: 'guys i really need a server', type: 'phisics'},
+
     ],
     searchingData: []
 }
@@ -25,11 +30,13 @@ const SearchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 searchingData: [
-                    ...state.mathData.filter(({id, topic}) => topic.includes(state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
+                    ...state.mathData.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
+                        state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
                             return {id, topic, type}
                         }
                     ),
-                    ...state.phisicData.filter(({id, topic}) => topic.includes(state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
+                    ...state.phisicData.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
+                        state?.searchString?.toLowerCase())).map(({id, topic, type}) => {
                             return {id, topic, type}
                         }
                     ),
@@ -38,7 +45,7 @@ const SearchReducer = (state = initialState, action) => {
         case SET_SEARCH_STRING:
             return {
                 ...state,
-                searchString: action.string ? action.string : null
+                searchString: action.string && action.string !== '' ? action.string : ''
             }
 
         default:

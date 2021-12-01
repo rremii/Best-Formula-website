@@ -13,7 +13,6 @@ let initialState = {
 
 const MainReducer = (state = initialState, action) => {
 
-
     switch (action.type) {
         case TOGGLE_LIGHT_MOD:
             return {
@@ -41,6 +40,8 @@ const MainReducer = (state = initialState, action) => {
     }
 }
 export const toggleLightMod = () => {
+    debugger
+
     return {type: TOGGLE_LIGHT_MOD}
 }
 export const togglePreroll = (toggleTo) => {

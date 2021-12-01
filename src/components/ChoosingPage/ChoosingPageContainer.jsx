@@ -6,8 +6,8 @@ import withRoute from "../Common/Hoc/withRoute";
 
 const ChoosingPageContainer = (props) => {
     let data
-    if(window.location.pathname ==='/phisics') data = props?.choosingPage?.phisicTopics
-    if(window.location.pathname ==='/math') data = props?.choosingPage?.mathTopics
+    // if(window.location.pathname ==='/phisics') data = props?.choosingPage?.phisicTopics
+    // if(window.location.pathname ==='/math') data = props?.choosingPage?.mathTopics
 
 
 
@@ -17,8 +17,8 @@ const ChoosingPageContainer = (props) => {
 }
 let mapStateToProps = (state) => {
     return {
-        choosingPage: getTopicAllsSelector(state),
-        isLightMod: state.MainVariables.isLightMod,
+        // choosingPage: getTopicAllsSelector(state),
+        // isLightMod: state.MainVariables.isLightMod,
 
     }
 

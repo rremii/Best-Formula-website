@@ -1,6 +1,8 @@
 @import "src/sass/variables"
 
 .arrow
+  cursor: pointer
+  transition: 1s
   display: flex
   justify-content: center
   align-items: center
@@ -9,11 +11,12 @@
   bottom: 5%
   width: calc(7rem + 3vw)
   @include media-break(1200px,max)
-    display: none
+    //display: none
   img
     width: 100%
     height: 100%
 .backGround
+  transition: 1.5s
   position: absolute
   left: 0
   top: 0
@@ -84,7 +87,6 @@
 
   .imgContainer
     height: 100%
-    //overflow: hidden
     width: 100%
     display: flex
     justify-content: center
@@ -97,4 +99,5 @@
       object-fit: contain
 
 ///////////////////////////////////////////////////////////////////////////
+
 .MainPage_night

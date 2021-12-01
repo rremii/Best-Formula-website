@@ -7,7 +7,7 @@ const MainPageContainer = (props) => {
 }
 let mapStateToProps = (state) => {
     return {
-        isLightMod: state.MainVariables.isLightMod,
+        // isLightMod: state.MainVariables.isLightMod,
     }
 }
 export default compose(

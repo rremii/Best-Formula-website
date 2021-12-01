@@ -1,7 +1,7 @@
 import css from './AboutePage.module.sass'
 
 const AboutPage = (props) => {
-    return <div className={[css.wrapper, props.isLightMod ? css.wrapper_night : ''].join(' ')}>
+    return <div className={[css.wrapper].join(' ')}>
         <div className={css.top__container}>
             <div>
                 basically Best Formula was created personally for me and my friends but that would be cool indeed is you
