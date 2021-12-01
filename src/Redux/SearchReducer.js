@@ -16,7 +16,7 @@ let initialState = {
         {id: '1', topic: 'topic2', type: 'phisics'},
         {id: '2', topic: 'some name2', type: 'phisics'},
         {id: '3', topic: 'fk ur assh*le', type: 'phisics'},
-        {id: '4', topic: 'guys i really need a server', type: 'phisics'},
+        {id: '4', topic: 'thats sad tho', type: 'phisics'},
 
     ],
     searchingData: []
