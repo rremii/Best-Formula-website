@@ -22,6 +22,7 @@ import AboutPageContainer from "./components/AboutPage/AboutPageContainer";
 import HeaderContainerRRR from "./components/HeaderRRR/HeaderContainer";
 import HeaderRRR from "./components/HeaderRRR/Header";
 import Header from "./components/Header/Header";
+import NavBarContainer from "./components/NavBar/NavBarContainer";
 
 function App(props) {
   // let [isPreroll, togglePreroll] = useState(false)
@@ -34,6 +35,7 @@ function App(props) {
       <>
         <HeaderContainer />
       </>
+        <NavBarContainer  />
 
       <main>
         <Routes>

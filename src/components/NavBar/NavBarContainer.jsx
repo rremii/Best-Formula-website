@@ -10,7 +10,8 @@ const NavBarContainer = (props) => {
 }
 let mapStateToProps = (state) => {
     return {
-        isLightMod: state.MainVariables.isLightMod
+        isLightMod: state.MainVariables.isLightMod,
+        isNavBar: state.MainVariables.isNavBar
     }
 }
 export default compose(

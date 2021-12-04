@@ -1,10 +1,12 @@
 const TOGGLE_LIGHT_MOD = 'TOGGLE_LIGHT_MOD'
 const TOGGLE_PREROLL = 'TOGGLE_PREROLL'
 const TOGGLE_PREROLL_TO_NIGHT = 'TOGGLE_PREROLL_TO_NIGHT'
+const TOGGLE_NAVBAR='TOGGLE_NAVBAR'
 const URL = 'URL'
 
 let initialState = {
     // url: '',
+    isNavBar:false,
     isLightMod: false,
     isPreroll: false,
     isPrerollNight: false,
@@ -30,17 +32,17 @@ const MainReducer = (state = initialState, action) => {
                 isPrerollNight: state.isPreroll = action.toggleTo
             }
 
-        // case URL:
-        //     return {
-        //         ...state,
-        //         url: action.url
-        //     }
+        case TOGGLE_NAVBAR:
+            return {
+                ...state,
+                isNavBar: !state.isNavBar
+            }
         default:
             return state
     }
 }
 export const toggleLightMod = () => {
-    debugger
+
 
     return {type: TOGGLE_LIGHT_MOD}
 }
@@ -50,7 +52,7 @@ export const togglePreroll = (toggleTo) => {
 export const togglePrerollToNight = (toggleTo) => {
     return {type: TOGGLE_PREROLL_TO_NIGHT, toggleTo}
 }
-// export const url = (url) => {
-//     return {type: URL, url}
-// }
+export const toggleNavBar = () => {
+    return {type: TOGGLE_NAVBAR}
+}
 export default MainReducer
