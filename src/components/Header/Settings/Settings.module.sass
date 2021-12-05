@@ -1,0 +1,57 @@
+@import "src/components/Header/header__sass/Header.module"
+@import "src/sass/variables"
+.hidden
+  position: absolute
+  visibility: hidden
+.settings
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+  position: absolute
+  top: $header-height
+  right: 0
+  width: calc(20rem + 10vw)
+  z-index: 5
+  height: calc(20rem + 10vw)
+  background: linear-gradient(180deg, rgba(173, 35, 35, 0.7505) 0%, rgba(65, 15, 15, 0.627) 100%)
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25)
+  border-radius: 0px 0px 0px 20px
+
+  @include media-break(500px, max)
+    align-items: flex-start
+    justify-content: flex-start
+    padding: 5%
+    border-radius: 30px 0px 0px 0px
+    top: initial
+    bottom: 0
+
+  span
+    font-family: Philosopher
+    font-size: calc(2.5rem + 1vw)
+    text-align: center
+    color: white
+    font-weight: bold
+    @include media-break(500px, max)
+      display: none
+
+  .container
+    display: flex
+    justify-content: space-between
+    height: 25%
+    width: 75%
+    border-radius: 3rem
+    @include media-break(500px, max)
+      height: 30%
+      margin: 5% 0
+
+    div
+      width: 50%
+
+    div:first-of-type
+      background-color: black
+      border-radius: 3rem 0 0 3rem
+
+    div:last-of-type
+      background-color: white
+      border-radius: 0 3rem 3rem 0

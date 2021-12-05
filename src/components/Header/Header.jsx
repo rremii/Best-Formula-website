@@ -6,6 +6,7 @@ import searchImg from './../../images/search.svg'
 import {toggleLightMod} from "../../Redux/MainReduser";
 import {NavLink} from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
+import Settings from "./Settings/Settings";
 
 const Header = (props) => {
     let [isSearchActive, toggleSearch] = useState(false);
@@ -19,9 +20,11 @@ const Header = (props) => {
     const toggleNavBar=()=> {
     props.toggleNavBar()
     }
+    const toggleSettings=()=> {
+    props.toggleSettings()
+    }
     return (
         <div className={[css.header].join(" ")}>
-
             {
                 isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlay}/>
             }
@@ -66,7 +69,7 @@ const Header = (props) => {
                         })}
                     </article>
                 </div>
-                <div className={css.gearWheel}>
+                <div onClick={toggleSettings} className={css.gearWheel}>
                     <img src={gearWheel} alt=""/>
                 </div>
             </div>

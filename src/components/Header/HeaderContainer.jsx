@@ -2,7 +2,14 @@ import Header from "./Header.jsx";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import React from "react";
-import {toggleLightMod, toggleNavBar, togglePreroll, togglePrerollToNight, url} from "../../Redux/MainReduser";
+import {
+    toggleLightMod,
+    toggleNavBar,
+    togglePreroll,
+    togglePrerollToNight,
+    toggleSettings,
+    url
+} from "../../Redux/MainReduser";
 import nightMod from "../Common/Hoc/nightMod";
 import {getSearchData, setSearchString} from "../../Redux/SearchReducer";
 import {getTopicAllsSelector} from "../../Redux/choosingPage-selector";
@@ -28,7 +35,8 @@ export default compose(
     connect(mapStateToProps, {
         toggleNavBar,
         getSearchData,
-        setSearchString
+        setSearchString,
+        toggleSettings
     })
     // nightMod
 )(HeaderContainer)
