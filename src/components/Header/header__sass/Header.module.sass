@@ -1,6 +1,7 @@
 @import "../../../sass/variables"
 $header-height: calc(5rem + 3vw)
 
+
 .header
   display: flex
   align-items: center
@@ -26,11 +27,14 @@ $header-height: calc(5rem + 3vw)
     height: 100%
 
     span
+      border-radius: 1rem
       height: 9%
       background-color: rgba(53, 14, 14, 0.86)
+      background-color: rgba(255, 255, 255, 0.64)
       width: 75%
       background-blend-mode: soft-light
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3)
+
 
   .logo
     cursor: pointer
@@ -56,7 +60,7 @@ $header-height: calc(5rem + 3vw)
       width: calc(4rem + 0.9vw)
       height: calc(4rem + 0.9vw)
       margin: 0 5%
-      @include media-break(900px, max)
+      @include media-break($mediaBreak1200px, max)
         margin: 0
 
         width: calc(5rem + 1vw)
@@ -70,7 +74,7 @@ $header-height: calc(5rem + 3vw)
       img
         cursor: pointer
         width: 100%
-        @include media-break(900px, max)
+        @include media-break($mediaBreak1200px, max)
           width: 75%
 
 
@@ -88,7 +92,7 @@ $header-height: calc(5rem + 3vw)
   @include media-break(1100px, max)
     width: 30vw
 
-  @include media-break(900px, max)
+  @include media-break($mediaBreak1200px, max)
     display: flex
     justify-content: center
     margin: 0 calc(1.5rem + 1vw)
@@ -103,7 +107,7 @@ $header-height: calc(5rem + 3vw)
     padding-left: 5%
     border: none
     font-size: calc(1.5rem + 1vw)
-    @include media-break(900px, max)
+    @include media-break($mediaBreak1200px, max)
       display: none
 
   div:nth-child(2)
@@ -113,7 +117,7 @@ $header-height: calc(5rem + 3vw)
     display: flex
     align-items: center
     justify-content: center
-    @include media-break(900px, max)
+    @include media-break($mediaBreak1200px, max)
       width: calc(3.5rem + 3vw)
       height: calc(3.5rem + 3vw)
 
@@ -173,7 +177,7 @@ $header-height: calc(5rem + 3vw)
           color: white
 
 
-        @include media-break(900px, max)
+        @include media-break($mediaBreak1200px, max)
           //width: calc(7rem + 5vw)
 
             transform: rotateZ(-28deg)
@@ -192,7 +196,6 @@ $header-height: calc(5rem + 3vw)
   left: 0
   width: 100vw
   height: 100vh
-
 @keyframes overlay
   0%
     opacity: 0

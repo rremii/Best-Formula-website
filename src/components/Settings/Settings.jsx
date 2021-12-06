@@ -1,7 +1,7 @@
 import css from './Settings.module.sass'
 
 const Settings = (props) => {
-    return <div className={props.isSettings ? css.settings : css.hidden}>
+    return <section className={[css.settings,props.isSettings ? '' : css.hidden].join(' ')}>
         <span>Theme</span>
         <div className={css.container}>
             <div>
@@ -14,6 +14,6 @@ const Settings = (props) => {
             <div></div>
             <div></div>
         </div>
-    </div>
+    </section>
 }
 export default Settings

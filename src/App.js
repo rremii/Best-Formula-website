@@ -23,8 +23,8 @@ import HeaderContainerRRR from "./components/HeaderRRR/HeaderContainer";
 import HeaderRRR from "./components/HeaderRRR/Header";
 import Header from "./components/Header/Header";
 import NavBarContainer from "./components/NavBar/NavBarContainer";
-import Settings from "./components/Header/Settings/Settings";
-import SettingsContainer from "./components/Header/Settings/SettingsContainer";
+import Settings from "./components/Settings/Settings";
+import SettingsContainer from "./components/Settings/SettingsContainer";
 
 function App(props) {
     // let [isPreroll, togglePreroll] = useState(false)

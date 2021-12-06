@@ -12,7 +12,7 @@
   @include media-break(1100px, max)
     width: 30vw
 
-  @include media-break(900px, max)
+  @include media-break($mediaBreak1200px, max)
     padding: 0 calc(1.5rem + 1vw)
     position: absolute
     border-radius: 0
@@ -28,7 +28,7 @@
 
 
 .searchContainerhasContent
-  @include media-break(900px,min)
+  @include media-break($mediaBreak1200px,min)
     border-radius: 3rem 3rem 0 0
 
 

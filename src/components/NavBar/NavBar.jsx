@@ -5,6 +5,7 @@ const NavBar = (props) => {
 
 
     return <nav className={!props.isNavBar?css.hidden:''}>
+        <section className={css.section}></section>
         <div  className={css.links}>
             Math
         </div>

@@ -1,9 +1,24 @@
-@import "src/components/Header/header__sass/Header.module"
-@import "src/sass/variables"
-.hidden
+@import "../Header/header__sass/Header.module"
+@import "../../sass/variables"
+section.hidden
+  //top: $header-height
+  //right: 0
   position: absolute
   visibility: hidden
+  width: 0
+  height: 0
+  transform-origin: right
+  border-radius: 0 0 0 30rem
+  @include media-break($mediaBreak1200px, max)
+    padding: 0
+    border-radius:  30rem 0 0 0
+
+  .container,span
+    font-size: 0
+    transform: translateX(5rem)
+
 .settings
+  transition: 0.7s
   display: flex
   flex-direction: column
   align-items: center
@@ -11,45 +26,53 @@
   position: absolute
   top: $header-height
   right: 0
-  width: calc(20rem + 10vw)
   z-index: 5
-  height: calc(20rem + 10vw)
+  width: calc(20rem + 7vw)
+  height: calc(20rem + 7vw)
   background: linear-gradient(180deg, rgba(173, 35, 35, 0.7505) 0%, rgba(65, 15, 15, 0.627) 100%)
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25)
   border-radius: 0px 0px 0px 20px
-
-  @include media-break(500px, max)
+  padding-bottom: 1rem
+  @include media-break($mediaBreak1200px, max)
     align-items: flex-start
     justify-content: flex-start
-    padding: 5%
+    padding: calc(1rem + 1vw) 3% 3% calc(2rem + 1vw)
     border-radius: 30px 0px 0px 0px
     top: initial
     bottom: 0
 
   span
+    transition: 0.7s
+
+
     font-family: Philosopher
     font-size: calc(2.5rem + 1vw)
     text-align: center
     color: white
     font-weight: bold
-    @include media-break(500px, max)
+    @include media-break($mediaBreak1200px, max)
       display: none
+      transition: 0s
 
   .container
+    transition: 1s
+
     display: flex
     justify-content: space-between
-    height: 25%
+    height: 28%
     width: 75%
     border-radius: 3rem
-    @include media-break(500px, max)
-      height: 30%
+    @include media-break($mediaBreak1200px, max)
+      width: 70%
+      height: calc(5rem + 2vw)
       margin: 5% 0
 
     div
       width: 50%
 
     div:first-of-type
-      background-color: black
+      background: rgba(57, 4, 4, 0.88)
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)
       border-radius: 3rem 0 0 3rem
 
     div:last-of-type

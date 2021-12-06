@@ -6,7 +6,7 @@ import searchImg from './../../images/search.svg'
 import {toggleLightMod} from "../../Redux/MainReduser";
 import {NavLink} from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
-import Settings from "./Settings/Settings";
+import Settings from "../Settings/Settings";
 
 const Header = (props) => {
     let [isSearchActive, toggleSearch] = useState(false);
