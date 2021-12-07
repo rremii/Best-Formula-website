@@ -1,8 +1,7 @@
 @import "../Header/header__sass/Header.module"
 @import "../../sass/variables"
 section.hidden
-  //top: $header-height
-  //right: 0
+
   position: absolute
   visibility: hidden
   width: 0
@@ -10,10 +9,12 @@ section.hidden
   transform-origin: right
   border-radius: 0 0 0 30rem
   @include media-break($mediaBreak1200px, max)
+    bottom: 0
+    right: 0
     padding: 0
-    border-radius:  30rem 0 0 0
+    border-radius: 30rem 0 0 0
 
-  .container,span
+  .container, span
     font-size: 0
     transform: translateX(5rem)
 
@@ -23,7 +24,8 @@ section.hidden
   flex-direction: column
   align-items: center
   justify-content: space-evenly
-  position: absolute
+  position: fixed
+
   top: $header-height
   right: 0
   z-index: 5

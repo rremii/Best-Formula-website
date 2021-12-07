@@ -17,18 +17,18 @@ const Header = (props) => {
         props.getSearchData()
     }
 
-    const toggleNavBar=()=> {
-    props.toggleNavBar()
+    const toggleNavBar = () => {
+        props.toggleNavBar()
     }
-    const toggleSettings=()=> {
-    props.toggleSettings()
+    const toggleSettings = () => {
+        props.toggleSettings()
     }
     return (
         <div className={[css.header].join(" ")}>
             {
                 isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlay}/>
             }
-            <div onClick={toggleNavBar} className={css.burger}>
+            <div onClick={toggleNavBar} className={[css.burger, props.isNavBar ? css.burgerActive : ''].join(" ")}>
                 <span/>
                 <span/>
                 <span/>
@@ -39,7 +39,7 @@ const Header = (props) => {
             <div className={css.different}>
                 <div
                     className={
-                        [props.searchingString && isSearchActive? css.searchContainerhasContent : '',
+                        [props.searchingString && isSearchActive ? css.searchContainerhasContent : '',
                             isSearchActive ? css.searchContainerActive : css.searchContainer].join(' ')
                     }
                     onClick={() => toggleSearch(true)}
@@ -69,11 +69,11 @@ const Header = (props) => {
                         })}
                     </article>
                 </div>
-                <div onClick={toggleSettings} className={css.gearWheel}>
+                <div onClick={toggleSettings}
+                     className={[css.gearWheel, props.isSettings ? css.gearWheelActive : ''].join(' ')}>
                     <img src={gearWheel} alt=""/>
                 </div>
             </div>
-
 
 
         </div>

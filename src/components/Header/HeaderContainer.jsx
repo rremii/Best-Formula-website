@@ -26,8 +26,10 @@ let mapStateToProps = (state) => {
         // isLightMod: state.MainVariables.isLightMod
         // isPrerollNight: state.MainVariables.isPrerollNight,
         searchingData: state.SearchPage.searchingData,
-        searchingString: state.SearchPage.searchString
+        searchingString: state.SearchPage.searchString,
         // url: state.MainVariables.url
+        isNavBar: state.MainVariables.isNavBar,
+        isSettings: state.MainVariables.isSettings
 
     }
 }
