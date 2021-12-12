@@ -1,18 +1,28 @@
 import css from "./NavBar.module.sass";
+import {NavLink} from "react-router-dom";
 
 
 const NavBar = (props) => {
 
+    const toggleNavBar = () => {
+        props.toggleNavBar()
+    }
 
-    return <nav className={!props.isNavBar?css.hidden:''}>
-        <section className={css.section}></section>
-        <div  className={css.links}>
-            Math
-        </div>
-        <div className={css.links}>
-            Phisics
-        </div>
-    </nav>
+    return <>
+        {
+            props.isNavBar &&
+            <section onClick={toggleNavBar} className={css.overlay}></section>
+        }
+        <nav className={!props.isNavBar ? css.hidden : ''}>
+            <NavLink to='math' className={css.links}>
+                Math
+            </NavLink>
+            <NavLink to='phisics' className={css.links}>
+                Phisics
+            </NavLink>
+        </nav>
+    </>
+
 
 };
 export default NavBar;

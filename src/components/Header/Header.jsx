@@ -33,9 +33,9 @@ const Header = (props) => {
                 <span/>
                 <span/>
             </div>
-            <div className={css.logo}>
+            <NavLink to='/' className={css.logo}>
                 <img src={logo} alt=""/>
-            </div>
+            </NavLink>
             <div className={css.different}>
                 <div
                     className={

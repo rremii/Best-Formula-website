@@ -32,15 +32,16 @@ function App(props) {
     //     togglePreroll(true)
     //     setTimeout(()=>togglePreroll(false),700)
     // },[props.isLightMod])
+
     return (
-        <div className="App">
+        <div  className="App">
             <>
                 <HeaderContainer/>
             </>
             <NavBarContainer/>
             <SettingsContainer/>
 
-            <main>
+            <main >
                 <Routes>
                     <Route
                         path="/"
