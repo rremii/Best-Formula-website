@@ -5,9 +5,9 @@ import {useEffect} from "react";
 const AboutPage = (props) => {
 //////////////////
     const animateBG = (e) => {
-        let elements = document.createElement('div')
-        elements.setAttribute('class', 'element')
-        document.querySelector('.AboutePage_bg__Q_7ri').appendChild(elements)
+        let elements = document?.createElement('div')
+        elements?.setAttribute('class', 'element')
+        document.querySelector('.AboutePage_bg__Q_7ri')?.appendChild(elements)
         // console.log(e.targetTouches[0].clientY)
         if (e._reactName === "onTouchMove") {
             elements.style.left = e?.targetTouches[0]?.clientX + 'px'
@@ -33,31 +33,34 @@ const AboutPage = (props) => {
         threshold: arr
     })
 
-    console.log(intersectionObserverEntry)
-    // console.log(arr)
-
 
     return <div ref={ref} onMouseMove={animateBG} onTouchMove={animateBG} className={[css.AboutPage].join(' ')}>
+
         <div className={css.bg}>
-            <div className={css.top__container}>
-                <div>
-                    basically Best Formula was created personally for me and my friends but that would be cool indeed is
-                    you
-                    could find it usefull in your case
-                </div>
+            <div className={css.textPusherLeft}>
+
             </div>
-            <div className={css.bottom__container}>
-                <div>
-                    here you can find all the nessasary formulas for math and phisics without any water. i know myself
-                    how
-                    complicated it can be to quicly find nessasary stuff.now bileave me you'll never have such a problem
-                    any
-                    more!
-                </div>
+            <div className={css.textPusherRight}>
+
             </div>
+
+            <span>
+
+            basically Best Formula was created
+            personally for me and my friends but that
+            would be cool indeed is
+            you
+            could find it usefull in your case
+
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquid at deserunt eligendi ex illo ipsa itaque labore laborum, necessitatibus neque non porro provident quia rerum saepe sed sequi soluta voluptatem. Architecto, commodi corporis deleniti distinctio eius et explicabo impedit ipsa magnam molestiae necessitatibus qui, quia quisquam quos rem saepe ullam voluptate. A dignissimos distinctio dolore doloribus earum est, ex excepturi impedit, in iste labore molestias natus nesciunt omnis perferendis perspiciatis quaerat quam qui quia quos suscipit tempora ut velit veniam vitae! A animi ducimus expedita in neque nihil obcaecati optio possimus, tempore voluptatibus? Aut ipsa possimus quibusdam quisquam?
+            </span>
         </div>
         <section
-            style={{transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.6 ? -100 * (intersectionObserverEntry.intersectionRatio - 0.59): '0' }%)`}}
+            style={{
+                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.5 ?
+                    -100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.49 : 0.40)) : '0'}%)`
+            }}
             className={[css.upperText, css.leftText].join(' ')}>
 
       <span>
@@ -65,7 +68,10 @@ const AboutPage = (props) => {
       </span>
         </section>
         <section
-            style={{transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.6 ? 100 * (intersectionObserverEntry.intersectionRatio - 0.59): '0' }%)`}}
+            style={{
+                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.5 ?
+                    100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.49 : 0.40)) : '0'}%)`
+            }}
             className={[css.upperText, css.rightText].join(' ')}>
       <span>
            BEST FORMULA

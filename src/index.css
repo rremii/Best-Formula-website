@@ -2,7 +2,7 @@
     z-index: 0;
     position: absolute;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     mix-blend-mode: screen;
     width: calc(10rem + 7vw);
     height: calc(10rem + 7vw);
