@@ -20,7 +20,11 @@ let initialState = {
     ],
     phisicTopics:[
         {id:1,topic:'hellopis'},
-        {id:2,topic:'hello2phis'}
+        {id:2,topic:'hello2phis'},
+        {id:3,topic:'topic3'},
+        {id:4,topic:'topic4'},
+        {id:5,topic:'topic5'},
+        {id:6,topic:'topic6'},
     ]
 }
 
