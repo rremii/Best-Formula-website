@@ -10,12 +10,12 @@ import withRoute from "../Common/Hoc/withRoute";
 const TopicPageContainer = (props) => {
 
 
-    // let id = useParams()
-    // useEffect(() => {
-    //     if (window.location.pathname.includes('/math')) props.getMathData(id)
-    //     if (window.location.pathname.includes('/phisics')) props.getPhisicsData(id)
-    //
-    // }, [window.location.pathname])
+    let id = useParams()
+    useEffect(() => {
+        if (window.location.pathname.includes('/math')) props.getMathData(id)
+        if (window.location.pathname.includes('/phisics')) props.getPhisicsData(id)
+
+    }, [window.location.pathname])
     return <TopicPage url={props.url} {...props.TopicPage[0]} />
 }
 let mapStateToProps = (state) => {
@@ -26,5 +26,5 @@ let mapStateToProps = (state) => {
 }
 export default compose(
     connect(mapStateToProps, {getMathData, getPhisicsData}),
-    // withRoute
+    withRoute
 )(TopicPageContainer)

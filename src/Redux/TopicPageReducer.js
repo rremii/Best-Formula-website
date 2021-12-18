@@ -3,12 +3,17 @@ const GET_PHISICS_DATA = 'getPhisicsData'
 
 let initialState = {
     mathData: [
-        {id: '1', name: 'math1111', formulas: ['formulacool2'], discription: 'some description1'},
-        {id: '2', name: 'math222', formulas: ['formulacool3'], discription: 'some description2'}
+        {
+            id: '1',
+            name: 'hello there how ',
+            formulas: ['formulacool2', 'fuck u1', 'fuck u2', 'fuck u3', 'fuck u4'],
+            discription: ['some description1', 'some description0']
+        },
+        {id: '2', name: 'math222', formulas: ['formulacool3'], discription: ['some description2']}
     ],
     phisicData: [
-        {id: '1', name: 'hellopis1111', formulas: ['formulacool4'], discription: 'some description3'},
-        {id: '2', name: 'hello2phis222', formulas: ['formulacool5'], discription: 'some description4'}
+        {id: '1', name: 'hellopis1111', formulas: ['formulacool4'], discription: ['some description3']},
+        {id: '2', name: 'hello2phis222', formulas: ['formulacool5'], discription: ['some description4']}
     ],
     currentTopic: {}
 }

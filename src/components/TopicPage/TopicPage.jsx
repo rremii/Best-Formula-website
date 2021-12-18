@@ -7,22 +7,36 @@ const TopicPage = (props) => {
     //     props.url(window.location.pathname)
     //     console.log(window.location.pathname)
     // },[window.location.pathname])
-    // console.log(props)
-    return <div className={[css.wrapper,props.isLightMod?css.wrapper_night:''].join(' ')}>
+    console.log(props)
+    return <div className={[css.wrapper, props.isLightMod ? css.wrapper_night : ''].join(' ')}>
         <div className={css.name}>
             <span>{props.name}</span>
         </div>
-        <div className={css.content}>
-            <div>
-                {props?.formulas?.map(formula => {
-                    return <span>{formula}</span>
+        <div className={css.container}>
 
-                })}
+            <div className={css.formulas}>
+                <div>
+                    Formulas
+                </div>
+                <div>
+
+                    {props?.formulas?.map(formula => {
+                        return <span key={formula}>{formula}</span>
+
+                    })}
+                </div>
 
 
             </div>
-            <div>
-                {props.discription}
+            <div className={css.discription}>
+                <div>
+                    Discription
+                </div>
+                <div>
+                    {props?.discription?.map(formula => {
+                        return <span key={formula}>{formula}</span>
+                    })}
+                </div>
             </div>
         </div>
     </div>
