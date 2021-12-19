@@ -5,9 +5,9 @@ let initialState = {
     mathData: [
         {
             id: '1',
-            name: 'hello there how ',
-            formulas: ['formulacool2', 'fuck u1', 'fuck u2', 'fuck u3', 'fuck u4'],
-            discription: ['some description1', 'some description0']
+            name: 'Magnetism',
+            formulas: ['F = B*I*L*sinα', 'F = B*Q*V', 'Ф = S*B*sinβ'],
+            discription: ['B = induction', 'I = amperage', 'L = lenght', 'Q = charge', 'V = speed', 'α = angle between B and I', 'β = angle between B and normal']
         },
         {id: '2', name: 'math222', formulas: ['formulacool3'], discription: ['some description2']}
     ],

@@ -4,8 +4,8 @@
     pointer-events: none;
     background-color: rgba(0, 0, 0, 1);
     mix-blend-mode: screen;
-    width: calc(10rem + 7vw);
-    height: calc(10rem + 7vw);
+    width: calc(15rem + 10vw);
+    height: calc(15rem + 10vw);
     border-radius: 50%;
     transform: translate(-50%,-50%);
 }

@@ -1,19 +1,16 @@
-@import "./sass/reset"
 @import "./sass/variables"
-
+@import "./sass/reset"
+@import "src/components/Header/header__sass/Header.module"
 
 .App
-  //background: linear-gradient(179.78deg, #000000 8.15%, #949FDC 71.01%)
-  //overflow: hidden
-  height: 100vh
   display: grid
-  //grid-template-columns: minmax(6.5rem, 1fr) 18fr
-  //grid-template-rows: minmax(10rem,1fr) minmax(min-content,10fr)
   grid-template-rows: min-content
   position: relative
   width: 100vw
-  //overflow: auto
+
   overflow: hidden
+  height: 100vh
+  overflow: auto
 
   @include media-break(1920px, min)
     width: 1920px
@@ -25,6 +22,16 @@
 
   main
     position: relative
-    overflow: auto
-    height: 100vh
-    //font-size: 15rem
+    overflow: hidden
+
+.scrollBar
+  z-index: 50
+  background-color: rgb(193, 196, 194)
+  position: absolute
+  top: $header-height
+  right: 0
+  width: calc(0.5rem + 0.5vw)
+  border-radius: 0 0 1rem 1rem
+  box-shadow: -0.1rem 0rem 1rem 0rem rgba(0, 0, 0, 0.73)
+
+

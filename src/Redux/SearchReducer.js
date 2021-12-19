@@ -7,7 +7,7 @@ const SET_SEARCH_STRING = 'SET_SEARCH_STRING'
 let initialState = {
     searchString: '',
     mathData: [
-        {id: '1', topic: 'topic1', type: 'math'},
+        {id: '1', topic: 'magnetism', type: 'math'},
         {id: '2', topic: 'some name1', type: 'math'},
         {id: '3', topic: 'hey mert', type: 'math'},
         {id: '4', topic: 'guys i really need a server', type: 'math'},

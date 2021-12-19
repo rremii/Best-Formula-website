@@ -2,7 +2,7 @@
 
 let initialState = {
     mathTopics:[
-        {id:1,topic:'posic 1'},
+        {id:1,topic:'magnetism'},
         {id:2,topic:'topic2'},
         {id:3,topic:'topic3'},
         {id:4,topic:'topic4'},

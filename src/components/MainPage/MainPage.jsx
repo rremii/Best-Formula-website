@@ -7,6 +7,11 @@ import React from "react";
 
 const MainPage = () => {
 
+    const scrollBy=(e)=>{
+
+
+    }
+
     return (<div className={[css.MainPage].join(' ')}>
         <div className={css.contentContainer}>
             <section className={css.content}>
@@ -29,7 +34,7 @@ const MainPage = () => {
         </div>
         <img className={[css.backGround].join(' ')} src={clouds1}
              alt=""/>
-        <div  className={[css.arrow].join(' ')}>
+        <div onClick={scrollBy} className={[css.arrow].join(' ')}>
             <img src={arrow} alt=""/>
         </div>
     </div>)

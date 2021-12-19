@@ -1,0 +1,71 @@
+@import "src/sass/variables"
+.Footer
+  position: relative
+  z-index: 1
+  background: linear-gradient(93.53deg, #342828 27.69%, rgba(46, 13, 13, 0.94) 65.68%) white
+  font-size: 5rem
+  width: 100vw
+  height: calc(20rem + 10vw)
+  display: flex
+  //flex-wrap: wrap-reverse
+  justify-content: space-between
+  align-items: center
+  padding: 5% 5%
+  @include media-break(500px, max)
+    justify-content: space-around
+    align-items: center
+    flex-direction: column-reverse
+
+  .links
+    align-self: flex-start
+    display: flex
+    justify-content: center
+    align-items: center
+    @include media-break(500px, max)
+      align-self: center
+
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: white
+      margin: 0 calc(0.5rem + 1.5vw)
+      width: calc(5rem + 3vw)
+      height: calc(5rem + 3vw)
+      border-radius: 50%
+      box-shadow: 0 0 5rem 0.5rem white
+      animation: fade_in_out 3s infinite
+
+      img
+        width: 70%
+
+    a:nth-child(1)
+      animation-delay: 0s
+
+    a:nth-child(2)
+      animation-delay: 0.375s
+
+    a:nth-child(3)
+      animation-delay: 0.7s
+
+    a:nth-child(4)
+      animation-delay: 1.075s
+
+@keyframes fade_in_out
+  0%
+    box-shadow: 0 0 5rem 0.5rem white
+  50%
+    box-shadow: 0 0 1rem 0.5rem white
+    transform: scale(0.9)
+    opacity: 0.1
+
+  100%
+    box-shadow: 0 0 5rem 0.5rem white
+
+.copyrite
+  align-self: flex-end
+  font-size: calc(2rem + 1vw)
+  color: white
+  @include media-break(500px, max)
+    align-self: center
+

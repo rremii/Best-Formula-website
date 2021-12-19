@@ -53,7 +53,6 @@ const AboutPage = (props) => {
             could find it usefull in your case
 
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquid at deserunt eligendi ex illo ipsa itaque labore laborum, necessitatibus neque non porro provident quia rerum saepe sed sequi soluta voluptatem. Architecto, commodi corporis deleniti distinctio eius et explicabo impedit ipsa magnam molestiae necessitatibus qui, quia quisquam quos rem saepe ullam voluptate. A dignissimos distinctio dolore doloribus earum est, ex excepturi impedit, in iste labore molestias natus nesciunt omnis perferendis perspiciatis quaerat quam qui quia quos suscipit tempora ut velit veniam vitae! A animi ducimus expedita in neque nihil obcaecati optio possimus, tempore voluptatibus? Aut ipsa possimus quibusdam quisquam?
             </span>
         </div>
         <section

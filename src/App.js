@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import "./App.sass";
 
@@ -27,21 +27,33 @@ import Settings from "./components/Settings/Settings";
 import SettingsContainer from "./components/Settings/SettingsContainer";
 
 function App(props) {
-    // let [isPreroll, togglePreroll] = useState(false)
-    // useEffect(()=>{
-    //     togglePreroll(true)
-    //     setTimeout(()=>togglePreroll(false),700)
-    // },[props.isLightMod])
+    window.scrollTo(0, 1000);
 
+// этот код меняет поведение прокрутки на "smooth"
+    window.scrollTo({
+        top: 1000,
+        behavior: "smooth"
+    });
+
+    let [scrollHeight, setScrollHeight] = useState(0)
+
+
+    const setHeight = (e) => {
+        let totalHeight = e.target.scrollHeight - e.target.clientHeight
+        let scroll = e.target.scrollTop
+        let totalScroll = (scroll / totalHeight) * 100
+        setScrollHeight(totalScroll)
+    }
     return (
-        <div  className="App">
+        <div onScroll={setHeight} className="App">
             <>
                 <HeaderContainer/>
             </>
             <NavBarContainer/>
             <SettingsContainer/>
 
-            <main >
+            <main>
+                <div style={{height: `${scrollHeight}%`}} className="scrollBar"></div>
                 <Routes>
                     <Route
                         path="/"
