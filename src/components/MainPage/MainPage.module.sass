@@ -3,7 +3,6 @@
 
 .arrow
 
-  cursor: pointer
   transition: 1s
   display: flex
   justify-content: center
@@ -12,11 +11,13 @@
   left: 21%
   bottom: 5%
   width: calc(7rem + 3vw)
-  @include media-break(1200px,max)
+  @include media-break(1200px, max)
     display: none
+
   img
     width: 100%
     height: 100%
+
 .backGround
   transition: 1.5s
   position: absolute
@@ -27,6 +28,7 @@
   z-index: -1
   opacity: 1
   object-fit: cover
+
 .MainPage
   overflow: hidden
   width: 100%
@@ -54,6 +56,7 @@
     @include media-break(500px, max)
       padding-top: 10%
       padding-left: 2%
+
     .content
       font-family: Philosopher
 
@@ -81,6 +84,8 @@
         line-height: calc(1.5rem + 3vw)
         font-size: calc(1.3rem + 2.5vw)
         letter-spacing: 0.5rem
+        text-shadow: none
+        color: #000000
         @include media-break(900px, max)
           word-spacing: calc(0.1rem + 0.1vw)
           //text-align: center
@@ -93,8 +98,9 @@
     display: flex
     justify-content: center
     align-items: center
-    @include media-break(768px,max)
+    @include media-break(768px, max)
       align-items: flex-start
+
     img
       opacity: 1
       width: calc(26rem + 25vw)
@@ -102,4 +108,12 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-.MainPage_night
+.MainPage_light
+  .contentContainer
+    .content
+      h2
+        //color: rgba(255, 255, 255, 0.92)
+        //text-shadow: 0 4px 4px rgba(0, 0, 0, 1)
+
+
+      .backGround

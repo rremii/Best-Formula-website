@@ -11,15 +11,28 @@ const NavBar = (props) => {
     return <>
         {
             props.isNavBar &&
-            <section onClick={toggleNavBar} className={css.overlay}></section>
+            <span onClick={toggleNavBar} className={css.overlay}></span>
         }
-        <nav className={!props.isNavBar ? css.hidden : ''}>
-            <NavLink to='math' className={css.links}>
-                Math
-            </NavLink>
-            <NavLink to='phisics' className={css.links}>
-                Phisics
-            </NavLink>
+        <nav className={[!props.isNavBar ? css.hidden : '', props.isLightMod ? '' : css.dark].join(' ')}>
+            {props.language === 'eng' &&
+                <>
+                    <NavLink to='math' className={css.links}>
+                        <span>Math</span>
+                    </NavLink>
+                    <NavLink to='phisics' className={css.links}>
+                        <span>Phisics</span>
+                    </NavLink>
+                </>}
+
+            {props.language === 'rus' &&
+            <>
+                <NavLink to='math' className={css.links}>
+                    <span>Математика</span>
+                </NavLink>
+                <NavLink to='phisics' className={css.links}>
+                    <span>Физика</span>
+                </NavLink>
+            </>}
         </nav>
     </>
 

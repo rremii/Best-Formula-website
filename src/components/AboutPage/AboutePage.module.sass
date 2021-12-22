@@ -7,40 +7,44 @@
   font-size: calc(2rem + 2vw)
   min-height: 100vh
   height: min-content
-  background-color: #a25f1c
+  background: rgba(196, 196, 196, 1)
+  background: rgba(237, 128, 0, 1)
+  font-family: Philosopher
 
 .bg
   overflow: hidden
-  //padding-top: $header-height
   padding-top: 30vh
   padding-left: 5%
+  padding-right: 5%
   top: 0
   left: 0
   position: fixed
-  //text-align: center
   ///// scroll width
   width: calc(100% - (0.5rem + 0.5vw))
   height: 100%
   pointer-events: none
 
-  color: #a25f1c
+  color: rgba(196, 196, 196, 1)
+  color: rgba(237, 128, 0, 1)
 
 
 .upperText
 
   transition: 0.1s
-  background-color: #174A31
   width: 100%
   height: 100%
   position: absolute
   display: flex
   justify-content: center
   align-items: center
+  background: linear-gradient(180deg, #3F0D09 0%, #762027 100%)
 
   span
-    color: white
-    font-size: calc(5rem + 5vw)
+    font-size: calc(5rem + 7vw)
     text-align: center
+    background-image: radial-gradient(50% 50% at 50% 50%, #BA6E15 0%, #FF9900 100%)
+    color: transparent
+    -webkit-background-clip: text
 
 .leftText
   clip-path: polygon(0% 0%, 80% 0%, 20% 100%, 0% 100%)
@@ -72,7 +76,20 @@
   shape-outside: polygon(100% 40%, 100% 100%, 35% 100%)
   width: 50%
   height: 100%
-  //background-color: #17d9ce
   @include media-break(700px, max)
     clip-path: polygon(100% 55%, 100% 100%, 15% 100%)
     shape-outside: polygon(100% 55%, 100% 100%, 15% 100%)
+
+
+.AboutPage_Dark
+  background: #e7d9d9
+
+  .bg
+    color: #e7d9d9
+
+  .upperText
+    background: url("./../../images/snow.svg"),linear-gradient(180deg, #0A0909 0%, #3F3333 51.09%, #59121F 100%)
+    background-repeat: no-repeat
+    background-size: cover
+
+

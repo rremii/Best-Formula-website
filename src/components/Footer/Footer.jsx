@@ -6,10 +6,19 @@ import github from '../../images/github_icon.png'
 import {NavLink} from "react-router-dom";
 
 const Footer = (props) => {
-    return <div className={[css.Footer, props.isLightMod ? css.Footer_night : ''].join(' ')}>
-    <span className={css.copyrite}>
-        © by Artem Romanov,<br/>Firma design by DETKA
+    return <div className={[css.Footer, props.isLightMod ? "" : css.Footer_night].join(' ')}>
+        {props.language === 'eng' &&
+
+        <span className={css.copyrite}>
+        © by Artem Romanov,<br/>Firma design by Vlad
     </span>
+        }
+        {props.language === 'rus' &&
+
+        <span className={css.copyrite}>
+        © авторские права принадлежат Артему Романову,<br/>Firma дизай был сделан Владом :D
+    </span>
+        }
         <div className={css.links}>
             <NavLink to='#'>
                 <img src={wk} alt=""/>

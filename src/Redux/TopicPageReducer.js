@@ -3,12 +3,23 @@ const GET_PHISICS_DATA = 'getPhisicsData'
 
 let initialState = {
     mathData: [
-        {
-            id: '1',
-            name: 'Magnetism',
+        {id: '1',
+            eng:{
+
+                name: 'Magnetism',
+                formulas: ['F = B*I*L*sinα', 'F = B*Q*V', 'Ф = S*B*sinβ'],
+                discription: ['B = induction', 'I = amperage', 'L = lenght',
+                    'Q = charge', 'V = speed', 'α = angle between B and I', 'β = angle between B and normal']
+            },
+        rus:{
+
+            name: 'Магнетизм',
             formulas: ['F = B*I*L*sinα', 'F = B*Q*V', 'Ф = S*B*sinβ'],
-            discription: ['B = induction', 'I = amperage', 'L = lenght', 'Q = charge', 'V = speed', 'α = angle between B and I', 'β = angle between B and normal']
+            discription: ['B = Индукция', 'I = Сила тока', 'L = длинна', 'Q = заряд',
+                'V = скорость', 'α = угол между B и I', 'β = угол между B и нормалью']
         },
+        },
+
         {id: '2', name: 'math222', formulas: ['formulacool3'], discription: ['some description2']}
     ],
     phisicData: [

@@ -6,16 +6,17 @@ $header-height: calc(5rem + 3vw)
   display: flex
   align-items: center
   justify-content: space-between
-  position: absolute
+  position: fixed
 
   height: $header-height
   width: 100%
   top: 0
   left: 0
-  background-color: rgba(154, 39, 39, 0.32)
+  //background-color: rgba(154, 39, 39, 0.4)
   box-shadow: 0px 4px 5px 3px rgba(0, 0, 0, 0.3)
   z-index: 10
 
+  background-color: rgba(112, 15, 16, 0.5)
 
   .logo
     cursor: pointer
@@ -36,7 +37,7 @@ $header-height: calc(5rem + 3vw)
 
     .gearWheel
       transition: 1s
-
+      cursor: pointer
       display: flex
       align-items: center
       justify-content: center
@@ -49,9 +50,10 @@ $header-height: calc(5rem + 3vw)
         width: calc(5rem + 1vw)
         height: calc(5rem + 1vw)
         position: fixed
+        z-index: 21
         bottom: 2%
         right: 3%
-        background-color: #C4C4C4
+        background-color: rgba(250, 250, 250, 0.31)
         border-radius: 50%
 
       img
@@ -206,17 +208,16 @@ $header-height: calc(5rem + 3vw)
             transform: rotateZ(-29deg)
 
 
-.overlay
+.overlayHeader
   backdrop-filter: blur(3px)
-  filter: blur(4px)
-  animation: overlay 1s forwards
+  animation: overlayHeader 1s forwards
   position: absolute
   top: $header-height
   left: 0
   width: 100vw
   height: 100vh
 
-@keyframes overlay
+@keyframes overlayHeader
   0%
     opacity: 0
   100%
@@ -249,5 +250,7 @@ $header-height: calc(5rem + 3vw)
     width: 75%
 
 
-
-
+.headerDark
+  background-color: rgba(48, 48, 48, 0.5)
+  box-shadow: none
+  box-shadow: 0px 4px 5px 3px rgba(0, 0, 0, 0.15)

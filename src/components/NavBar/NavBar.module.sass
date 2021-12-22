@@ -1,16 +1,22 @@
 @import "src/sass/variables"
 @import "src/components/Header/header__sass/Header.module"
-.overlay
-  //background-color: rgba(255, 255, 255, 0.08)
-  //backdrop-filter: blur(3px)
 
+
+.overlay
+  background-color: rgba(255, 255, 255, 0.08)
+  backdrop-filter: blur(3px)
   position: fixed
   z-index: 4
   top: 0
   left: 0
   height: 100vh
   width: 100vw
-
+  animation: overlayNavBar 1s forwards
+@keyframes overlayNavBar
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 .hidden
   position: absolute
   visibility: hidden
@@ -20,15 +26,15 @@
   width: 0
   height: 0
   border-radius: 0 0 30rem 0
-  .links
-   visibility: hidden
 
+  .links
+    visibility: hidden
 
 
 nav
   transition: 0.7s
   z-index: 5
-  position: absolute
+  position: fixed
   top: $header-height
   left: 0
   height: calc(100vh - (5rem + 3vw))
@@ -36,16 +42,37 @@ nav
   width: calc(30rem + 10vw)
   @include media-break(500px, max)
     width: 100vw
+
   .links
     visibility: visible
 
     width: 100%
     height: calc(7rem + 1vw)
-    background: rgba(53, 11, 11, 0.32)
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25)
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
     display: flex
     justify-content: center
     align-items: center
-    font-size: calc(3rem + 1vw)
-    color: white
+    font-size: calc(3rem + 1.5vw)
     font-family: "Philosopher"
+    background-color: rgba(53, 11, 11, 0.32)
+    font-weight: 500
+    span
+      background-image: radial-gradient(50% 50% at 50% 50%, #BA6E15 0%, #FF9900 100%)
+      color:  transparent
+      -webkit-background-clip: text
+
+nav:after
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: url("./../../images/hinduPic.png")
+  opacity: 0.5
+  z-index: -1
+.dark
+  background: linear-gradient(180deg, rgba(47, 40, 40, 0.4655) 0%, rgba(11, 9, 9, 0.8265) 100%)
+  .links
+    background: rgba(0, 0, 0, 0.5)
+

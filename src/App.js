@@ -25,15 +25,13 @@ import Header from "./components/Header/Header";
 import NavBarContainer from "./components/NavBar/NavBarContainer";
 import Settings from "./components/Settings/Settings";
 import SettingsContainer from "./components/Settings/SettingsContainer";
+import Preroll from "./components/Common/Preroll/Preroll";
+import PrerollContainer from "./components/Common/Preroll/PrerollContainer";
 
 function App(props) {
-    window.scrollTo(0, 1000);
 
-// этот код меняет поведение прокрутки на "smooth"
-    window.scrollTo({
-        top: 1000,
-        behavior: "smooth"
-    });
+
+
 
     let [scrollHeight, setScrollHeight] = useState(0)
 
@@ -44,8 +42,11 @@ function App(props) {
         let totalScroll = (scroll / totalHeight) * 100
         setScrollHeight(totalScroll)
     }
+
+
     return (
         <div onScroll={setHeight} className="App">
+            <PrerollContainer/>
             <>
                 <HeaderContainer/>
             </>

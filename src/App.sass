@@ -7,8 +7,6 @@
   grid-template-rows: min-content
   position: relative
   width: 100vw
-
-  overflow: hidden
   height: 100vh
   overflow: auto
 
@@ -21,13 +19,13 @@
 
 
   main
-    position: relative
     overflow: hidden
+    position: relative
 
 .scrollBar
   z-index: 50
   background-color: rgb(193, 196, 194)
-  position: absolute
+  position: fixed
   top: $header-height
   right: 0
   width: calc(0.5rem + 0.5vw)

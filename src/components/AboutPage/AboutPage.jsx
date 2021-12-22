@@ -34,7 +34,8 @@ const AboutPage = (props) => {
     })
 
 
-    return <div ref={ref} onMouseMove={animateBG} onTouchMove={animateBG} className={[css.AboutPage].join(' ')}>
+    return <div ref={ref} onMouseMove={animateBG} onTouchMove={animateBG}
+                className={[css.AboutPage, !props.isLightMod ? css.AboutPage_Dark : ''].join(' ')}>
 
         <div className={css.bg}>
             <div className={css.textPusherLeft}>
@@ -44,21 +45,27 @@ const AboutPage = (props) => {
 
             </div>
 
+            {props.language === 'eng' &&
             <span>
-
-            basically Best Formula was created
+            basically BestFormula was created
             personally for me and my friends but that
-            would be cool indeed is
+            would be cool indeed if
             you
             could find it usefull in your case
-
-
             </span>
+            }
+            {props.language === 'rus' &&
+            <span>
+            Вообще, BestFormula была создана для
+            меня и моих друзей, но было бы круто
+            если она будит полезной для тебя тоже
+            </span>
+            }
         </div>
         <section
             style={{
-                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.5 ?
-                    -100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.49 : 0.40)) : '0'}%)`
+                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= (window.innerWidth >= 700 ? 0.6 : 0.5) ?
+                    -100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.59 : 0.4)) : '0'}%)`
             }}
             className={[css.upperText, css.leftText].join(' ')}>
 
@@ -68,8 +75,8 @@ const AboutPage = (props) => {
         </section>
         <section
             style={{
-                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= 0.5 ?
-                    100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.49 : 0.40)) : '0'}%)`
+                transform: ` translateX(${intersectionObserverEntry.intersectionRatio >= (window.innerWidth >= 700 ? 0.6 : 0.5) ?
+                    100 * (intersectionObserverEntry.intersectionRatio - (window.innerWidth >= 700 ? 0.59 : 0.4)) : '0'}%)`
             }}
             className={[css.upperText, css.rightText].join(' ')}>
       <span>

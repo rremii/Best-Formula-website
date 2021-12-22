@@ -1,13 +1,20 @@
 import {createSelector} from "reselect";
 import {useEffect} from "react";
+import {connect} from "react-redux";
 
 export const getTopicAllsSelector = (state) => {
 
     return state.choosingPage
 }
-export const getTopicsSelector = createSelector(getTopicAllsSelector,
+const getTopicsSelector = createSelector(getTopicAllsSelector,
     (AllTopics) => {
+    debugger
 
-    if(window.location.pathname === '/phisics') return AllTopics.phisicTopics
-    if(window.location.pathname === '/math') return AllTopics.mathTopics
     })
+// let mapStateToProps= (state)=>{
+//     language: state.MainVariables.language
+//
+// }
+// export default compose(
+//     connect(mapStateToProps,{})
+// )(getTopicsSelector)

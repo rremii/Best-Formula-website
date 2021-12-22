@@ -9,7 +9,8 @@ const FooterContainer=(props)=>{
 
 let mapStateToProps=(state)=>{
     return{
-        // isLightMod: state.MainVariables.isLightMod,
+        isLightMod: state.MainVariables.isLightMod,
+        language: state.MainVariables.language,
 
     }
 }

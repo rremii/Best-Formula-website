@@ -10,9 +10,9 @@ const PrerollContainer=(props)=>{
 
 let mapStateToProps = (state) => {
     return {
-        // isPreroll: state.MainVariables.isPreroll,
-        // isPrerollNight: state.MainVariables.isPrerollNight,
-        // isLightMod: state.MainVariables.isLightMod
+        isPreroll: state.MainVariables.isPreroll,
+        isPrerollNight: state.MainVariables.isPrerollNight,
+        isLightMod: state.MainVariables.isLightMod
 
     }
 }

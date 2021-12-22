@@ -3,22 +3,17 @@ import {NavLink} from "react-router-dom";
 import {useState} from "react";
 
 const ChoosingPage = (props) => {
-    // console.log(props.choosingPage)
 
     let [current, setCurrent] = useState(1)
-    let [translateTo, setTranslateTo] = useState(100)
+
     const setCurrentId = (id) => {
         console.log(id)
         setCurrent(id)
     }
+
     return <div className={[css.ChoosingPage].join(' ')}>
-        <div className={css.barrel}
-             // onTouchStart={() => setCurrentId(current + 1 >
-             // props.choosingPage.length ? 1 : current + 1)}
-             // onTouchEnd={() => setCurrentId(current - 1 === 0
-             //     ? props.choosingPage.length : current - 1)}
-        >
-            {props.choosingPage.map(({id, topic}) => {
+        <div className={css.barrel}>
+            {props?.choosingPage?.map(({id, topic}) => {
                 let translateBy
                 let isMain = 0
 

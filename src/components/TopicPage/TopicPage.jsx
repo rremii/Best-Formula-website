@@ -3,12 +3,7 @@ import {useEffect} from "react";
 
 const TopicPage = (props) => {
 
-    // useEffect(()=>{
-    //     props.url(window.location.pathname)
-    //     console.log(window.location.pathname)
-    // },[window.location.pathname])
-    console.log(props)
-    return <div className={[css.wrapper, props.isLightMod ? css.wrapper_night : ''].join(' ')}>
+    return <div className={[css.wrapper, props.isLightMod ? "" : css.wrapper_night].join(' ')}>
         <div className={css.name}>
             <span>{props.name}</span>
         </div>
@@ -19,14 +14,11 @@ const TopicPage = (props) => {
                     Formulas
                 </div>
                 <div>
-
                     {props?.formulas?.map(formula => {
                         return <span key={formula}>{formula}</span>
 
                     })}
                 </div>
-
-
             </div>
             <div className={css.discription}>
                 <div>

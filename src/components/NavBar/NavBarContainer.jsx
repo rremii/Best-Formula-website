@@ -11,7 +11,9 @@ const NavBarContainer = (props) => {
 let mapStateToProps = (state) => {
     return {
         isLightMod: state.MainVariables.isLightMod,
-        isNavBar: state.MainVariables.isNavBar
+        isNavBar: state.MainVariables.isNavBar,
+        language: state.MainVariables.language,
+
     }
 }
 export default compose(

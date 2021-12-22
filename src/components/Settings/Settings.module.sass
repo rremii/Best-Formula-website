@@ -1,7 +1,8 @@
 @import "../Header/header__sass/Header.module"
 @import "../../sass/variables"
+.disable
+  pointer-events: none
 section.hidden
-
   position: fixed
   visibility: hidden
   width: 0
@@ -48,9 +49,11 @@ section.hidden
 
 
     font-family: Philosopher
-    font-size: calc(2.5rem + 1vw)
+    font-size: calc(2rem + 1vw)
     text-align: center
-    color: white
+    //color: white
+    color: rgba(255, 153, 0, 1)
+
     font-weight: bold
     @include media-break($mediaBreak1200px, max)
       display: none
@@ -58,7 +61,6 @@ section.hidden
 
   .container
     transition: 1s
-
     display: flex
     justify-content: space-between
     height: 28%
@@ -71,6 +73,7 @@ section.hidden
 
     div
       width: 50%
+      cursor: pointer
 
     div:first-of-type
       background: rgba(57, 4, 4, 0.88)
@@ -80,3 +83,9 @@ section.hidden
     div:last-of-type
       background-color: white
       border-radius: 0 3rem 3rem 0
+    ///////////////////////////////////////////////////////////////////////
+.Dark
+  background: linear-gradient(180deg, rgba(47, 40, 40, 0.4655) 0%, rgba(0, 0, 0, 0.6745) 100%)
+  .container
+    div:first-of-type
+      background: rgb(27, 27, 27)

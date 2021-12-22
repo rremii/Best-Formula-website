@@ -24,9 +24,9 @@ const Header = (props) => {
         props.toggleSettings()
     }
     return (
-        <div className={[css.header].join(" ")}>
+        <div className={[css.header,props.isLightMod ? '' : css.headerDark].join(" ")}>
             {
-                isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlay}/>
+                isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlayHeader}/>
             }
             <div onClick={toggleNavBar} className={[css.burger, props.isNavBar ? css.burgerActive : ''].join(" ")}>
                 <span/>

@@ -6,7 +6,7 @@
   height: min-content
   padding-top: $header-height
   display: grid
-  grid-template-columns: minmax(8rem, 1fr) 10fr
+  grid-template-columns: minmax(8rem, 1fr) 11fr
   font-family: Philosopher
   @include media-break(768px, max)
     grid-template-rows: minmax(10rem, 13vh) calc(100vh - calc(5rem + 3vw))
@@ -16,7 +16,7 @@
   margin: 0
   padding: 0
   display: grid
-  grid-template-columns: 8fr 10fr
+  grid-template-columns: 8.2fr 10fr
   @include media-break(768px, max)
     grid-template-columns: 80vw 80vw
     overflow: auto
@@ -26,7 +26,8 @@
   justify-content: center
   align-items: center
   background: rgb(47, 45, 47)
-  color: white
+  color: rgba(237, 128, 0, 1)
+
   font-size: calc(3rem + 3.5vw)
   text-align: center
   writing-mode: vertical-lr
@@ -39,25 +40,38 @@
 
 .formulas
   background-color: rgb(67, 64, 64)
-  background-image: url("./../../images/FormulasBG.png")
   background-size: cover
   color: white
   padding: 0 1rem
-
+  position: relative
   div:nth-child(1)
     padding-top: 2rem
-
+    position: relative
+    z-index: 1
     text-align: center
     font-size: calc(4rem + 3vw)
     margin: 2rem 0
 
   div:nth-child(2)
+    position: relative
+    z-index: 1
     font-size: calc(2rem + 2vw)
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
     gap: calc(1rem + 3vw)
-
+.formulas:after
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background-image: url("./../../images/FormulasBG.png")
+  background-size: cover
+  background-repeat: no-repeat
+  opacity: 0.5
+  z-index: 0
 .discription
   background-color: white
   padding: 0 7%
@@ -79,3 +93,14 @@
 
     span
       width: 100%
+.wrapper_night
+  background-color: rgba(64, 60, 60, 1)
+
+  .name
+    background-color: rgb(50, 50, 50)
+
+  .formulas
+    background-color: rgb(40, 40, 40)
+  .discription
+    background-color: rgb(87, 87, 87)
+    color: rgba(0, 0, 0, 0.86)

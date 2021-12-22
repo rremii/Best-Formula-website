@@ -23,7 +23,7 @@ const HeaderContainer = (props) => {
 }
 let mapStateToProps = (state) => {
     return {
-        // isLightMod: state.MainVariables.isLightMod
+        isLightMod: state.MainVariables.isLightMod,
         // isPrerollNight: state.MainVariables.isPrerollNight,
         searchingData: state.SearchPage.searchingData,
         searchingString: state.SearchPage.searchString,
