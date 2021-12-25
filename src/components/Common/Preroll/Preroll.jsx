@@ -8,7 +8,6 @@ const Preroll = (props) => {
     useEffect(() => {
         if (props.isPrerollNight === true) toggleToNight(false)
         if (props.isPrerollNight === false) toggleToNight(true)
-        console.log(props.isPrerollNight)
     }, [props.isPreroll])
     return (
         <>

@@ -17,7 +17,6 @@ const TopicPageContainer = (props) => {
 
 
     let data = props?.TopicPage[0]
-    debugger
 
     if (props.language === 'eng') {
       data = {id,name: data?.eng.name,formulas: data?.eng.formulas,discription: data?.eng.discription }
@@ -26,7 +25,7 @@ const TopicPageContainer = (props) => {
         data = {id,name: data?.rus.name,formulas: data?.rus.formulas,discription: data?.rus.discription }
     }
 
-    return <TopicPage isLightMod={props.isLightMod} {...data} />
+    return <TopicPage language={props.language} isLightMod={props.isLightMod} {...data} />
 }
 let mapStateToProps = (state) => {
     return {

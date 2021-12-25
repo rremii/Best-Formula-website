@@ -9,7 +9,7 @@
   grid-template-columns: minmax(8rem, 1fr) 11fr
   font-family: Philosopher
   @include media-break(768px, max)
-    grid-template-rows: minmax(10rem, 13vh) calc(100vh - calc(5rem + 3vw))
+    grid-template-rows: minmax(10rem, 13vh) minmax(calc(100vh - calc(5rem + 3vw)), min-content)
     grid-template-columns: 1fr
 
 .container
@@ -18,12 +18,13 @@
   display: grid
   grid-template-columns: 8.2fr 10fr
   @include media-break(768px, max)
-    grid-template-columns: 80vw 80vw
-    overflow: auto
+    grid-template-columns: 90vw 90vw
+    overflow: hidden
+    overflow-x: auto
 
 .name
   display: flex
-  justify-content: center
+  justify-content: flex-start
   align-items: center
   background: rgb(47, 45, 47)
   color: rgba(237, 128, 0, 1)
@@ -31,19 +32,25 @@
   font-size: calc(3rem + 3.5vw)
   text-align: center
   writing-mode: vertical-lr
-  transform: rotate(180deg)
   letter-spacing: 0.5rem
+  span
+    margin-top: 50vh
+    transform: translateY(-50%) rotate(180deg)
   @include media-break(768px, max)
+    justify-content: center
     writing-mode: initial
-    transform: rotate(0deg)
     grid-column: span 2
-
+    width: 100vw
+    span
+      margin-top: 0
+      transform: translateY(0) rotate(0deg)
 .formulas
   background-color: rgb(67, 64, 64)
   background-size: cover
   color: white
   padding: 0 1rem
   position: relative
+
   div:nth-child(1)
     padding-top: 2rem
     position: relative
@@ -57,9 +64,12 @@
     z-index: 1
     font-size: calc(2rem + 2vw)
     display: flex
+    align-items: baseline
     flex-wrap: wrap
     justify-content: space-evenly
-    gap: calc(1rem + 3vw)
+    gap: 0 calc(1rem + 1vw)
+
+
 .formulas:after
   content: ''
   position: absolute
@@ -69,12 +79,14 @@
   height: 100%
   background-image: url("./../../images/FormulasBG.png")
   background-size: cover
-  background-repeat: no-repeat
+  background-repeat: repeat
   opacity: 0.5
   z-index: 0
+
 .discription
   background-color: white
-  padding: 0 7%
+  padding-left:  10%
+  padding-right:  3%
 
   div:nth-child(1)
     padding-top: 2rem
@@ -91,8 +103,13 @@
     gap: calc(0.5rem + 0.5vw)
     font-size: calc(2rem + 2vw)
 
-    span
+    ul
+      list-style: initial
       width: 100%
+
+      li
+        width: 100%
+
 .wrapper_night
   background-color: rgba(64, 60, 60, 1)
 
@@ -101,6 +118,7 @@
 
   .formulas
     background-color: rgb(40, 40, 40)
+
   .discription
     background-color: rgb(87, 87, 87)
     color: rgba(0, 0, 0, 0.86)

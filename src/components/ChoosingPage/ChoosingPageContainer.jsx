@@ -20,7 +20,6 @@ const ChoosingPageContainer = (props) => {
             return {id, topic: `${topic.rus}`}
         })
     }
-    console.log(data)
 
     return <ChoosingPage {...props} choosingPage={data}/>
 
@@ -29,7 +28,7 @@ const ChoosingPageContainer = (props) => {
 let mapStateToProps = (state) => {
     return {
         choosingPage: getTopicAllsSelector(state),
-        // isLightMod: state.MainVariables.isLightMod,
+        isLightMod: state.MainVariables.isLightMod,
         language: state.MainVariables.language,
 
     }

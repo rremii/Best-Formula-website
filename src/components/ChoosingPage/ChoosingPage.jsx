@@ -7,11 +7,10 @@ const ChoosingPage = (props) => {
     let [current, setCurrent] = useState(1)
 
     const setCurrentId = (id) => {
-        console.log(id)
         setCurrent(id)
     }
 
-    return <div className={[css.ChoosingPage].join(' ')}>
+    return <div className={[css.ChoosingPage,props.isLightMod?'':css.Dark].join(' ')}>
         <div className={css.barrel}>
             {props?.choosingPage?.map(({id, topic}) => {
                 let translateBy

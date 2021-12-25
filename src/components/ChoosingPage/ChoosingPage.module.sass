@@ -11,6 +11,7 @@
   background-color: black
   height: 100vh
   padding-top: $header-height
+  background-image: url("../../images/choosingPageBGLight.png")
 
   a
     font-size: 5rem
@@ -35,6 +36,7 @@
     width: 90%
 
 .cell
+  font-family: Philosopher
   display: flex
   justify-content: center
   align-items: center
@@ -80,7 +82,7 @@
 
 
 @mixin second
-  background-color: rgba(120, 120, 120, 0.8)
+  background-color: rgba(135, 135, 135, 0.9)
   height: 10rem
   width: 95%
   z-index: 3
@@ -102,7 +104,7 @@
 
 @mixin third
 
-  background-color: rgba(84, 84, 84, 0.9)
+  background-color: rgba(141, 141, 141, 0.85)
   height: 9rem
   width: 90%
   z-index: 2
@@ -125,7 +127,7 @@
 @mixin forth
 
 
-  background-color: rgba(77, 77, 77, 0.6)
+  background-color: rgba(122, 122, 122, 0.6)
   opacity: 1
   height: 8rem
   width: 85%
@@ -155,3 +157,5 @@
   @include forth
 
   top: 5%
+.Dark
+  background-image: url("../../images/choosingPapgeBGDark.png")

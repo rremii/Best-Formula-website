@@ -1,14 +1,14 @@
 
 
 let initialState = {
-    mathTopics:[
+    phisicTopics:[
         {id:1,topic:{
-            eng:'Magnetism',
-            rus:'Магнетизм',
+            eng:'Kinematics',
+            rus:'Кинематика',
             }},
         {id:2,topic:{
-                eng:'direct current',
-                rus:'постоянный ток',
+                eng:'Magnetism',
+                rus:'Магнетизм',
             }},
         {id:3,topic:{
                 eng:'optics',
@@ -32,13 +32,35 @@ let initialState = {
             }},
 
     ],
-    phisicTopics:[
-        {id:1,topic:'hellopis'},
-        {id:2,topic:'hello2phis'},
-        {id:3,topic:'topic3'},
-        {id:4,topic:'topic4'},
-        {id:5,topic:'topic5'},
-        {id:6,topic:'topic6'},
+    mathTopics:[
+        {id:1,topic:{
+                eng:'math1',
+                rus:'матем1',
+            }},
+        {id:2,topic:{
+                eng:'math2',
+                rus:'матем2',
+            }},
+        {id:3,topic:{
+                eng:'math3',
+                rus:'матем3',
+            }},
+        {id:4,topic:{
+                eng:'math4',
+                rus:'матем4',
+            }},
+        {id:5,topic:{
+                eng:'math5',
+                rus:'матем5',
+            }},
+        {id:6,topic:{
+                eng:'math6',
+                rus:'матем6',
+            }},
+        {id:7,topic:{
+                eng:'math7',
+                rus:'матем7',
+            }},
     ]
 }
 

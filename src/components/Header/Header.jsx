@@ -8,23 +8,26 @@ import {NavLink} from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
 import Settings from "../Settings/Settings";
 
-const Header = (props) => {
+const Header = ({searchingData, ...props}) => {
+
     let [isSearchActive, toggleSearch] = useState(false);
     let search = React.useRef()
     const getSearchData = () => {
-        console.log(search.current.value)
         props.setSearchString(search.current.value)
-        props.getSearchData()
+        props.getSearchData(props.language)
     }
 
     const toggleNavBar = () => {
         props.toggleNavBar()
+        toggleSearch(false)
     }
     const toggleSettings = () => {
         props.toggleSettings()
+        toggleSearch(false)
+
     }
     return (
-        <div className={[css.header,props.isLightMod ? '' : css.headerDark].join(" ")}>
+        <div  className={[css.header, props.isLightMod ? '' : css.headerDark].join(" ")}>
             {
                 isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlayHeader}/>
             }
@@ -55,11 +58,11 @@ const Header = (props) => {
                         <img src={searchImg} alt=""/>
                     </div>
                     <article className={css.searchingDataContainer}>
-                        {props?.searchingData.map(({id, topic, type}) => {
+                        {searchingData?.map(({id, topic, type, url}) => {
                             return (
-                                <NavLink key={topic} to={`${type}/${"" + id}`}>
-                                    <span className={type === 'math' ? css.typeMath : css.typePhis}>
-                                        <p>{type === 'math' ? 'math' : 'phis'}</p>
+                                <NavLink key={topic} to={`${url}/${"" + id}`}>
+                                    <span className={type === 'math' || type === 'мат' ? css.typeMath : css.typePhis}>
+                                        <p>{type}</p>
                                     </span>
                                     <span className={css.topic}>
                                     {'' + topic}

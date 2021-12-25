@@ -7,7 +7,6 @@ const withRoute = (Component) => (props) => {
 
     let navigator = useNavigate()
     useEffect(() => {
-        console.log(window.location.pathname)
     }, [navigator])
 
     return <Component  {...props}/>

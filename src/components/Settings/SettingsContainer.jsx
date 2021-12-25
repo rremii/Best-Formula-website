@@ -10,6 +10,7 @@ let mapStateToProps = (state) => {
     return {
         isSettings: state.MainVariables.isSettings,
         isLightMod: state.MainVariables.isLightMod,
+        language: state.MainVariables.language,
 
 
     }

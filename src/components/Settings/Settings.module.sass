@@ -18,6 +18,10 @@ section.hidden
   .container, span
     font-size: 0
     transform: translateX(5rem)
+    div
+      img
+        width: 0
+        height: 0
 
 .settings
   transition: 0.7s
@@ -29,7 +33,7 @@ section.hidden
 
   top: $header-height
   right: calc(0.5rem + 0.5vw)
-  z-index: 5
+  z-index: 10
   width: calc(20rem + 7vw)
   height: calc(20rem + 7vw)
   background: linear-gradient(180deg, rgba(173, 35, 35, 0.7505) 0%, rgba(65, 15, 15, 0.627) 100%)
@@ -74,18 +78,34 @@ section.hidden
     div
       width: 50%
       cursor: pointer
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        transition: all 1s
+        width: calc(3rem + 2vw)
+        height: calc(3rem + 2vw)
+      img:nth-child(1)
 
     div:first-of-type
-      background: rgba(57, 4, 4, 0.88)
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)
       border-radius: 3rem 0 0 3rem
-
     div:last-of-type
-      background-color: white
       border-radius: 0 3rem 3rem 0
-    ///////////////////////////////////////////////////////////////////////
+
+.offLigthMode
+  background: rgba(57, 4, 4, 0.88)
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+  background: rgb(27, 27, 27)
+.onLigthMode
+  background: white
+.offLanguageMode
+  background: rgba(57, 4, 4, 0.88)
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+  background: rgb(27, 27, 27)
+.onLanguageMode
+  background: white
+///////////////////////////////////////////////////////////////////////
 .Dark
   background: linear-gradient(180deg, rgba(47, 40, 40, 0.4655) 0%, rgba(0, 0, 0, 0.6745) 100%)
   .container
     div:first-of-type
-      background: rgb(27, 27, 27)
