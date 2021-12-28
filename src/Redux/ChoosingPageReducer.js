@@ -7,28 +7,32 @@ let initialState = {
             rus:'Кинематика',
             }},
         {id:2,topic:{
-                eng:'Magnetism',
-                rus:'Магнетизм',
+                eng:'Dynamics',
+                rus:'Динамика',
             }},
         {id:3,topic:{
-                eng:'optics',
-                rus:'оптика',
+                eng:'Thermodynamics',
+                rus:'Термодинамика',
             }},
         {id:4,topic:{
-                eng:'kinematics',
-                rus:'кинематика',
+                eng:'Mechanical work',
+                rus:'Механическая работа',
             }},
         {id:5,topic:{
-                eng:'mechannika',
-                rus:'механника',
+                eng:'MKT',
+                rus:'MKT',
             }},
         {id:6,topic:{
-                eng:'warmth',
-                rus:'теплота',
+                eng:'Electrostatics',
+                rus:'Электростатика',
             }},
         {id:7,topic:{
-                eng:'energy',
-                rus:'эниргии',
+                eng:'Direct current',
+                rus:'Постоянный ток',
+            }},
+        {id:8,topic:{
+                eng:'Magnetism',
+                rus:'Магнетизм',
             }},
 
     ],

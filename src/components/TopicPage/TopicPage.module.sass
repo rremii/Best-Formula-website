@@ -7,9 +7,10 @@
   padding-top: $header-height
   display: grid
   grid-template-columns: minmax(8rem, 1fr) 11fr
+  grid-template-rows: minmax(calc(100vh - (5rem + 3vw)), min-content)
   font-family: Philosopher
   @include media-break(768px, max)
-    grid-template-rows: minmax(10rem, 13vh) minmax(calc(100vh - calc(5rem + 3vw)), min-content)
+    grid-template-rows: minmax(10rem, 13vh) minmax(calc(100vh - (5rem + 3vw)), min-content)
     grid-template-columns: 1fr
 
 .container
@@ -34,14 +35,19 @@
   writing-mode: vertical-lr
   letter-spacing: 0.5rem
   span
-    margin-top: 50vh
-    transform: translateY(-50%) rotate(180deg)
-  @include media-break(768px, max)
+    display: flex
     justify-content: center
+    align-items: center
+    min-height: calc(100vh - (5rem + 3vw))
+    height: max-content
+    transform:  rotate(180deg)
+  @include media-break(768px, max)
     writing-mode: initial
     grid-column: span 2
     width: 100vw
     span
+      height: 100%
+      width: 100%
       margin-top: 0
       transform: translateY(0) rotate(0deg)
 .formulas

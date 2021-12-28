@@ -35,7 +35,12 @@ const TopicPage = (props) => {
                     <div>
                         <ul>
                             {props?.discription?.map((discriptin) => {
-                                return <li key={discriptin}>{discriptin}</li>;
+                                return <li key={discriptin}>
+                                    <MathJaxContext>
+                                        <MathJax>
+                                            {discriptin}
+                                        </MathJax>
+                                    </MathJaxContext></li>
                             })}
                         </ul>
                     </div>

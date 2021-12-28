@@ -26,7 +26,10 @@ const Settings = (props) => {
     return <section className={[css.settings,
         props.isSettings ? '' : css.hidden,
         props.isLightMod ? '' : css.Dark].join(' ')}>
-        <span>Theme</span>
+        {props.language === 'eng' ?
+            <span>Theme</span> : <span>Тема</span>
+        }
+
         <div className={css.container}>
             <div
                 className={[!props.isLightMod ? css.disable : '', props.isLightMod ? css.offLigthMode : css.onLigthMode].join(' ')}
@@ -39,7 +42,9 @@ const Settings = (props) => {
                 <img src={LightModeIcon} alt=""/>
             </div>
         </div>
-        <span>Language</span>
+        {props.language === 'eng' ?
+            <span>Language</span> : <span>язык</span>
+        }
         <div className={css.container}>
             <div
                 className={[props.language === 'rus' ? css.disable : '', props.language === 'rus' ? css.onLanguageMode : css.offLanguageMode].join(' ')}

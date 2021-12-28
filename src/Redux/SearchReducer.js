@@ -8,22 +8,24 @@ let initialState = {
     searchString: '',
     phisicData: {
         eng: [
-            {id: '1', topic: 'magnetism', type: 'phis', url: 'phisics'},
-            {id: '2', topic: 'phicis2', type: 'phis', url: 'phisics'},
-            {id: '3', topic: 'phicis3', type: 'phis', url: 'phisics'},
-            {id: '4', topic: 'phicis4', type: 'phis', url: 'phisics'},
-            {id: '5', topic: 'phicis5', type: 'phis', url: 'phisics'},
-            {id: '6', topic: 'phicis6', type: 'phis', url: 'phisics'},
-            {id: '7', topic: 'phicis7', type: 'phis', url: 'phisics'},
+            {id: '1', topic: 'Kinematics', type: 'phis', url: 'phisics'},
+            {id: '2', topic: 'Dynamics', type: 'phis', url: 'phisics'},
+            {id: '3', topic: 'Thermodynamics', type: 'phis', url: 'phisics'},
+            {id: '4', topic: 'Mechanical work', type: 'phis', url: 'phisics'},
+            {id: '5', topic: 'MKT', type: 'phis', url: 'phisics'},
+            {id: '6', topic: 'Electrostatics', type: 'phis', url: 'phisics'},
+            {id: '7', topic: 'Direct current', type: 'phis', url: 'phisics'},
+            {id: '7', topic: 'Magnetism', type: 'phis', url: 'phisics'},
         ],
         rus: [
-            {id: '1', topic: 'магнетизм', type: 'физ', url: 'phisics'},
-            {id: '2', topic: 'физика2', type: 'физ', url: 'phisics'},
-            {id: '3', topic: 'физика3', type: 'физ', url: 'phisics'},
-            {id: '4', topic: 'физика4', type: 'физ', url: 'phisics'},
-            {id: '5', topic: 'физика5', type: 'физ', url: 'phisics'},
-            {id: '6', topic: 'физика6', type: 'физ', url: 'phisics'},
-            {id: '7', topic: 'физика7', type: 'физ', url: 'phisics'},
+            {id: '1', topic: 'Кинематика', type: 'физ', url: 'phisics'},
+            {id: '2', topic: 'Динамика', type: 'физ', url: 'phisics'},
+            {id: '3', topic: 'Термодинамика', type: 'физ', url: 'phisics'},
+            {id: '4', topic: 'Механическая работа', type: 'физ', url: 'phisics'},
+            {id: '5', topic: 'MKT', type: 'физ', url: 'phisics'},
+            {id: '6', topic: 'Электростатика', type: 'физ', url: 'phisics'},
+            {id: '7', topic: 'Постоянный ток', type: 'физ', url: 'phisics'},
+            {id: '7', topic: 'Магнетизм', type: 'физ', url: 'phisics'},
 
         ]
     },
@@ -59,26 +61,26 @@ const SearchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 searchingData: action.language === 'eng' ? [
-                        ...state.mathData.eng.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
-                            state?.searchString?.toLowerCase())).map(({id, topic, type,url}) => {
+                        ...state.mathData.eng.filter(({id, topic}) => topic.toLowerCase().includes(state?.searchString !== '' &&
+                            state?.searchString?.toLowerCase())).map(({id, topic, type, url}) => {
                                 return {id, topic, type, url}
                             }
                         ),
-                        ...state.phisicData.eng.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
-                            state?.searchString?.toLowerCase())).map(({id, topic, type,url}) => {
+                        ...state.phisicData.eng.filter(({id, topic}) => topic.toLowerCase().includes(state?.searchString !== '' &&
+                            state?.searchString?.toLowerCase())).map(({id, topic, type, url}) => {
                                 return {id, topic, type, url}
                             }
                         ),
                     ]
                     :
                     [
-                        ...state.mathData.rus.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
-                            state?.searchString?.toLowerCase())).map(({id, topic, type,url}) => {
+                        ...state.mathData.rus.filter(({id, topic}) => topic.toLowerCase().includes(state?.searchString !== '' &&
+                            state?.searchString?.toLowerCase())).map(({id, topic, type, url}) => {
                                 return {id, topic, type, url}
                             }
                         ),
-                        ...state.phisicData.rus.filter(({id, topic}) => topic.includes(state?.searchString !== '' &&
-                            state?.searchString?.toLowerCase())).map(({id, topic, type,url}) => {
+                        ...state.phisicData.rus.filter(({id, topic}) => topic.toLowerCase().includes(state?.searchString !== '' &&
+                            state?.searchString?.toLowerCase())).map(({id, topic, type, url}) => {
                                 return {id, topic, type, url}
                             }
                         ),

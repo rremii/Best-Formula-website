@@ -9,7 +9,6 @@ import NavBarContainer from "../NavBar/NavBarContainer";
 import Settings from "../Settings/Settings";
 
 const Header = ({searchingData, ...props}) => {
-
     let [isSearchActive, toggleSearch] = useState(false);
     let search = React.useRef()
     const getSearchData = () => {
@@ -27,7 +26,7 @@ const Header = ({searchingData, ...props}) => {
 
     }
     return (
-        <div  className={[css.header, props.isLightMod ? '' : css.headerDark].join(" ")}>
+        <div className={[css.header, props.isLightMod ? '' : css.headerDark].join(" ")}>
             {
                 isSearchActive && <div onClick={() => toggleSearch(false)} className={css.overlayHeader}/>
             }
@@ -70,6 +69,14 @@ const Header = ({searchingData, ...props}) => {
                                 </NavLink>
                             )
                         })}
+                        {searchingData.length === 0 && props.searchingString &&
+                        <NavLink  to='#'>
+                            <div className={css.topic}>
+                                Not found
+                            </div>
+                        </NavLink>
+
+                        }
                     </article>
                 </div>
                 <div onClick={toggleSettings}

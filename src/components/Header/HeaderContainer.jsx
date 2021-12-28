@@ -28,6 +28,7 @@ let mapStateToProps = (state) => {
         isSettings: state.MainVariables.isSettings,
         language: state.MainVariables.language,
 
+
     }
 }
 export default compose(
